@@ -17,3 +17,6 @@
 "
 
 source ./personal_config/basic_settings.vim
+if has("nvim") && !has("win32")
+  source ./personal_config/term_settings.vim
+endif
