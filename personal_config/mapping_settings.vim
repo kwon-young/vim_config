@@ -10,16 +10,29 @@
 " Date: 29/09/2016
 "
 " Description:
-"   This file is the top config file for my vim configuration.
-"   It's mainly used to source other configuration files.
+"   This file contains all my personal mappings
 "
 " Compatibility: Vim and Neovim
 "
 
-source ./personal_config/basic_settings.vim
-source ./personal_config/abbrev_settings.vim
-source ./personal_config/mapping_settings.vim
+let maploca=","
+let mapleader="ù"
 
-if has("nvim") && !has("win32")
-  source ./personal_config/term_settings.vim
-endif
+" Insert mode mappings {{{
+
+" Escape
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+" U command in insert mode
+inoremap <a-u> <esc>viw~ea
+" }}}
+
+" Normal mode mappings {{{
+
+"Edit and source vimrc
+nnoremap <leader>ev :vsplit ~/prog/dotfiles/init.vim<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>eg :vsplit ~/prog/dotfiles/ginit.vim<cr>
+nnoremap <leader>sg :source ~/prog/dotfiles/ginit.vim<cr>
+" }}}
