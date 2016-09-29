@@ -20,3 +20,25 @@ filetype indent plugin on
 " Enable syntax highlighting
 syntax on
 
+" Change directory for swp, undo and backup file {{{
+" Enable undo files and backup files
+set undofile
+set backup
+" Use full path of the file to name the backup file
+augroup backup_file
+   autocmd!
+   autocmd BufWritePre * let &backupext=substitute(expand("%:p"), ":\\=\\", "%%", "g")
+augroup END
+" customize path for each platform configuration
+if has("win32")
+  let rt_dir="$HOME/vimfiles/"
+elseif has("nvim")
+  let rt_dir="$HOME/.config/nvim/"
+else
+  let rt_dir="$HOME/.vim/"
+endif
+" set rt_dir for undo, backup and swap files
+let &undodir=rt_dir . "undo//"
+let &backupdir=rt_dir . "backup//"
+let &directory=rt_dir . "swp//"
+" }}}
