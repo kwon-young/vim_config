@@ -56,3 +56,11 @@ augroup END
 " else set no folding
 set foldlevel=999
 " }}}
+
+" Exclude quickfix from buflist {{{
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+" }}}
+
