@@ -15,3 +15,8 @@
 " Compatibility: Vim and Neovim
 "
 
+" Enable filetype detection
+filetype indent plugin on
+" Enable syntax highlighting
+syntax on
+
