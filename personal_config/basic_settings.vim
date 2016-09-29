@@ -15,10 +15,11 @@
 " Compatibility: Vim and Neovim
 "
 
-" Enable filetype detection
+" Enable filetype detection {{{
 filetype indent plugin on
 " Enable syntax highlighting
 syntax on
+" }}}
 
 " Change directory for swp, undo and backup file {{{
 " Enable undo files and backup files
@@ -41,4 +42,17 @@ endif
 let &undodir=rt_dir . "undo//"
 let &backupdir=rt_dir . "backup//"
 let &directory=rt_dir . "swp//"
+" }}}
+
+" folding settings {{{
+" set folding method and level by filetype
+augroup ft
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+  autocmd FileType vim setlocal foldlevel=0
+  autocmd FileType cpp setlocal foldmethod=syntax
+  "autocmd FileType cpp setlocal foldlevel=2
+augroup END
+" else set no folding
+set foldlevel=999
 " }}}
