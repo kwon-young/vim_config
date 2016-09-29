@@ -13,4 +13,6 @@
 "   This file is the top config file for my vim configuration.
 "   It's mainly used to source other configuration files.
 "
+" Compatibility: Vim and Neovim
+"
 
