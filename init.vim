@@ -16,3 +16,4 @@
 " Compatibility: Vim and Neovim
 "
 
+source "./personal_config/basic_settings.vim"
