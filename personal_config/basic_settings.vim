@@ -64,3 +64,34 @@ augroup qf
 augroup END
 " }}}
 
+" various built in settings {{{
+set fenc=utf-8
+set encoding=utf-8
+set number
+set hidden
+set ignorecase
+set incsearch
+set hlsearch
+set smartcase
+set showmatch
+set autoindent
+set ruler
+set showcmd
+set mouse=a
+set history=1000
+set undolevels=1000
+set relativenumber
+let loaded_spellfile_plugin=0
+set spell
+set spelllang=en_us
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set grepprg=grep
+set backspace=2
+set noerrorbells
+set scrolloff=4
+set listchars=tab:>-,trail:-
+set wrap
+set showtabline=0
+" }}}
