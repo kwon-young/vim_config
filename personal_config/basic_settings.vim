@@ -95,3 +95,9 @@ set listchars=tab:>-,trail:-
 set wrap
 set showtabline=0
 " }}}
+
+"Set the status line options. Make it show more information. {{{
+set laststatus=2
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+" }}}
+
