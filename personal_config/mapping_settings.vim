@@ -31,9 +31,10 @@ inoremap <a-u> <esc>viw~ea
 " Normal mode mappings {{{
 
 "Edit and source vimrc
-" delete buffer without deleting split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>eg :vsplit $MYGVIMRC<cr>
 nnoremap <leader>sg :source $MYGVIMRC<cr>
+" delete buffer without deleting split
+nnoremap <leader>d :bp\|bd #<cr>
 " }}}
