@@ -37,4 +37,13 @@ nnoremap <leader>eg :vsplit $MYGVIMRC<cr>
 nnoremap <leader>sg :source $MYGVIMRC<cr>
 " delete buffer without deleting split
 nnoremap <leader>d :bp\|bd #<cr>
+" Switching split with alt {{{
+nnoremap <a-l> :wincmd l<CR>
+nnoremap <a-k> :wincmd k<CR>
+nnoremap <a-j> :wincmd j<CR>
+nnoremap <a-h> :wincmd h<CR>
+" scroll with alt
+nnoremap <a-f> <c-e><c-e>
+nnoremap <a-d> <c-y><c-y>
+
 " }}}
