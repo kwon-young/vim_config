@@ -46,4 +46,7 @@ nnoremap <a-h> :wincmd h<CR>
 nnoremap <a-f> <c-e><c-e>
 nnoremap <a-d> <c-y><c-y>
 
+" Add ; at the end of line
+nnoremap <leader>; mqA;<esc>`q
+
 " }}}
