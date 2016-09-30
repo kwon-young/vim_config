@@ -59,4 +59,10 @@ nnoremap <leader>N :cprevious<cr>
 " diffupdate to du
 nnoremap du :diffupdate<CR>
 
+" Add very magic to search command
+nnoremap / /\v
+nnoremap ? ?\v
+" }}}
+
+" F1-12 mappings {{{
 " }}}
