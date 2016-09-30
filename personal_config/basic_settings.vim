@@ -32,16 +32,16 @@ augroup backup_file
 augroup END
 " customize path for each platform configuration
 if has("win32")
-  let rt_dir=$HOME . "/vimfiles/"
+  let s:rt_dir=$HOME . "/vimfiles/"
 elseif has("nvim")
-  let rt_dir=$HOME . "/.local/share/nvim/"
+  let s:rt_dir=$HOME . "/.local/share/nvim/"
 else
-  let rt_dir=$HOME . "/.vim/"
+  let s:rt_dir=$HOME . "/.vim/"
 endif
-" set rt_dir for undo, backup and swap files
-let &undodir=rt_dir . "undo//"
-let &backupdir=rt_dir . "backup//"
-let &directory=rt_dir . "swp//"
+" set s:rt_dir for undo, backup and swap files
+let &undodir=s:rt_dir . "undo//"
+let &backupdir=s:rt_dir . "backup//"
+let &directory=s:rt_dir . "swp//"
 " }}}
 
 " folding settings {{{
