@@ -16,12 +16,11 @@
 " Compatibility: Vim and Neovim
 "
 
-source ./personal_config/basic_settings.vim
-source ./personal_config/abbrev_settings.vim
-source ./personal_config/mapping_settings.vim
-
-if has("nvim") && !has("win32")
-  source ./personal_config/term_settings.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-source ./plug_config/plug_init.vim
+call plug#begin()
+call plug#end()
