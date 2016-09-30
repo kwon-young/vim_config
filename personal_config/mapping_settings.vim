@@ -49,4 +49,14 @@ nnoremap <a-d> <c-y><c-y>
 " Add ; at the end of line
 nnoremap <leader>; mqA;<esc>`q
 
+" Show/unshow trailing space
+nnoremap <leader>w :match ExtraWhiteSpace /\v\s+$/<cr>
+nnoremap <leader>W :match none<cr>
+" Remove search highlight
+noremap <leader>h :nohlsearch<cr>
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>N :cprevious<cr>
+" diffupdate to du
+nnoremap du :diffupdate<CR>
+
 " }}}
