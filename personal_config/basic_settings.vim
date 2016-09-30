@@ -34,7 +34,7 @@ augroup END
 if has("win32")
   let rt_dir="$HOME/vimfiles/"
 elseif has("nvim")
-  let rt_dir="$HOME/.config/nvim/"
+  let rt_dir="$HOME/.local/share/nvim/"
 else
   let rt_dir="$HOME/.vim/"
 endif
