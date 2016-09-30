@@ -32,11 +32,11 @@ augroup backup_file
 augroup END
 " customize path for each platform configuration
 if has("win32")
-  let rt_dir="$HOME/vimfiles/"
+  let rt_dir=$HOME . "/vimfiles/"
 elseif has("nvim")
-  let rt_dir="$HOME/.local/share/nvim/"
+  let rt_dir=$HOME . "/.local/share/nvim/"
 else
-  let rt_dir="$HOME/.vim/"
+  let rt_dir=$HOME . "/.vim/"
 endif
 " set rt_dir for undo, backup and swap files
 let &undodir=rt_dir . "undo//"
