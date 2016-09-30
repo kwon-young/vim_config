@@ -23,3 +23,12 @@ augroup END
 set shell=zsh
 " }}}
 
+" Mappings {{{
+" exit insert mode in terminal
+tnoremap jk <C-\><C-n>
+" Switching split with alt
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+" }}}
