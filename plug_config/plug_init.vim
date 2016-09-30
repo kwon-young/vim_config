@@ -7,11 +7,10 @@
 "                  | |                                   
 "                  |_|                                   
 " Author: Kwon-Young Choi
-" Date: 29/09/2016
+" Date: 30/09/2016
 "
 " Description:
-"   This file is the top config file for my vim configuration.
-"   It's mainly used to source other configuration files.
+"   This is used to install a plugin manager and manage plugins.
 "
 " Compatibility: Vim and Neovim
 "
