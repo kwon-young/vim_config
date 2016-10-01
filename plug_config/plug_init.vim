@@ -31,6 +31,9 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
 
   " Appearance {{{
   Plug 'junegunn/seoul256.vim'
+  Plug 'itchyny/lightline.vim'
+  "Plug 'vim-airline/vim-airline'
+  "Plug 'vim-airline/vim-airline-themes'
   " }}}
 
   call plug#end()
