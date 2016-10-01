@@ -22,8 +22,13 @@ endif
 
 if !empty(glob("~/.vim/autoload/plug.vim"))
   call plug#begin()
+
   Plug 'https://gist.github.com/5dff641d68d20ba309ce.git',
         \ {'as': 'vimawesome', 'do': 'mkdir -p plugin; cp -f *.vim plugin/'}
+
+  " Neovim GUI
+  Plug 'equalsraf/neovim-gui-shim'
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
