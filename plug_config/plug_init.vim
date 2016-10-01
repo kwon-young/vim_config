@@ -10,7 +10,7 @@
 " Date: 30/09/2016
 "
 " Description:
-"   This is used to install a plugin manager and manage plugins.
+"   This file is used to install a plugin manager and manage plugins.
 "
 " Compatibility: Vim and Neovim
 "
@@ -29,7 +29,18 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
   " Neovim GUI
   Plug 'equalsraf/neovim-gui-shim'
 
+  " Appearance {{{
+  Plug 'junegunn/seoul256.vim'
+  " }}}
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
 endif
+
+" Settings colorscheme {{{
+let g:seoul256_background = 235
+set background=dark
+silent! colorscheme seoul256
+" }}}
+
