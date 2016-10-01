@@ -32,12 +32,12 @@ mkdir -p $HOME/.vim/undo
 mkdir -p $HOME/.vim/backup
 mkdir -p $HOME/.vim/swp
 
-ln -sf vimrc $HOME/.vimrc
-ln -sf gvimrc $HOME/.gvimrc
-ln -sf init.vim $HOME/.vim/init.vim
-ln -sf ginit.vim $HOME/.vim/ginit.vim
-ln -sf personal_config $HOME/.vim/personal_config
-ln -sf plug_config $HOME/.vim/plug_config
+ln -sf "$(readlink -e "vimrc")" $HOME/.vimrc
+ln -sf "$(readlink -e "gvimrc")" $HOME/.gvimrc
+ln -sf "$(readlink -e "init.vim")" $HOME/.vim/init.vim
+ln -sf "$(readlink -e "ginit.vim")" $HOME/.vim/ginit.vim
+ln -sf "$(readlink -e "personal_config")" $HOME/.vim/personal_config
+ln -sf "$(readlink -e "plug_config")" $HOME/.vim/plug_config
 
 # For Neovim
 mkdir -p $HOME/.local/share/nvim/swp
