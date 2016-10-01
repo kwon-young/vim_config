@@ -15,3 +15,5 @@
 " Compatibility: Neovim
 "
 
+" Configure font
+GuiFont Inconsolata\ for\ Powerline:b:h12
