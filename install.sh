@@ -16,6 +16,13 @@
 # Compatibility: Vim and Neovim
 #
 
+# Cleaning installation
+rm -rf $HOME/.vim
+rm -rf $HOME/.vimrc
+rm -rf $HOME/.gvimrc
+rm -rf $HOME/.config/nvim
+rm -rf $HOME/.local/share/nvim
+
 # Making directories and symbolic links
 # For Vim
 mkdir -p $HOME/.vim
