@@ -15,16 +15,29 @@
 " Compatibility: Vim and Neovim
 "
 
-if empty(glob('~/.vim/autoload/plug.vim'))
+if has('win32')
+  let s:plug_file = glob('~/vimfiles/autoload/plug.vim')
+elseif has('unix')
+  let s:plug_file = glob('~/.vim/autoload/plug.vim')
+endif
+
+if has('win32') && empty(s:plug_file)
+  silent !bitsadmin /transfer vimplug /download /priority normal https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim C:\users\kwon-young\vimfiles\autoload\plug.vim
+elseif has('unix') && empty(s:plug_file)
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-if !empty(glob("~/.vim/autoload/plug.vim"))
+if !empty(s:plug_file)
   call plug#begin()
 
-  Plug 'https://gist.github.com/5dff641d68d20ba309ce.git',
-        \ {'as': 'vimawesome', 'do': 'mkdir -p plugin; cp -f *.vim plugin/'}
+  if has('unix')
+    Plug 'https://gist.github.com/5dff641d68d20ba309ce.git',
+          \ {'as': 'vimawesome', 'do': 'mkdir -p plugin; cp -f *.vim plugin/'}
+  elseif has('win32')
+    Plug 'https://gist.github.com/5dff641d68d20ba309ce.git',
+          \ {'as': 'vimawesome', 'do': 'mkdir plugin && move *.vim plugin/'}
+  endif
 
   " Neovim GUI
   Plug 'equalsraf/neovim-gui-shim'
@@ -35,6 +48,15 @@ if !empty(glob("~/.vim/autoload/plug.vim"))
   "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
   " }}}
+
+  " File system
+  if has('unix')
+    Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+  endif
+  
+  " Git
+  Plug 'tpope/vim-fugitive'
 
   call plug#end()
 else
@@ -47,3 +69,8 @@ set background=dark
 silent! colorscheme seoul256
 " }}}
 
+" Status bar plugins configuration
+source ./plug_config/plug_statusbar.vim
+
+" Git plugins configuration
+source .\plug_config\plug_git.vim
