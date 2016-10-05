@@ -15,4 +15,8 @@
 " Compatibility: Vim
 "
 
-source $HOME/.vim/init.vim
+if has('win32')
+  source $HOME/vimfiles/init.vim
+else
+  source $HOME/.vim/init.vim
+endif
