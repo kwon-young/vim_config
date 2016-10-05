@@ -24,3 +24,6 @@ set guioptions-=L  "remove left-hand scroll bar
 
 " Set font
 set guifont=Powerline_Consolas:h11
+
+" Disable bell
+set vb t_vb=

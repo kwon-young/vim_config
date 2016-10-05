@@ -94,6 +94,8 @@ set scrolloff=4
 set listchars=tab:>-,trail:-
 set wrap
 set showtabline=0
+" disable bell of vim
+set noeb vb t_vb=
 " }}}
 
 "Set the status line options. Make it show more information. {{{
