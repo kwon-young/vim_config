@@ -15,6 +15,15 @@
 "
 " Compatibility: Vim and Neovim
 "
+if has('win32')
+  let s:past_dir=getcwd()
+  if has('nvim')
+    execute "let s:rt_dir='" . $LOCALAPPDATA . "\\nvim'"
+  else
+    execute "let s:rt_dir='" . $HOME . "\\vimfiles'"
+  endif
+  execute "cd " . s:rt_dir
+endif
 
 source ./personal_config/basic_settings.vim
 source ./personal_config/abbrev_settings.vim
@@ -25,3 +34,7 @@ if has("nvim") && !has("win32")
 endif
 
 source ./plug_config/plug_init.vim
+
+if has('win32')
+  execute "cd " . s:past_dir
+endif
