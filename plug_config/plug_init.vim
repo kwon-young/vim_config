@@ -73,4 +73,4 @@ silent! colorscheme seoul256
 source ./plug_config/plug_statusbar.vim
 
 " Git plugins configuration
-source .\plug_config\plug_git.vim
+source ./plug_config/plug_git.vim
