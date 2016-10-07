@@ -31,7 +31,9 @@ augroup backup_file
    autocmd BufWritePre * let &backupext=substitute(expand("%:p"), ":\\=\\", "%%", "g")
 augroup END
 " customize path for each platform configuration
-if has("win32")
+if has("win32") && has('nvim')
+  let s:rt_dir=$LOCALAPPDATA . "/nvim-data/"
+elseif has('win32')
   let s:rt_dir=$HOME . "/vimfiles/"
 elseif has("nvim")
   let s:rt_dir=$HOME . "/.local/share/nvim/"
