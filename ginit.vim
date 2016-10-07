@@ -19,5 +19,5 @@
 if has('unix')
   GuiFont Inconsolata\ for\ Powerline:b:h12
 elseif has('win32')
-  GuiFont Powerline Consolas:h11
+  GuiFont! Powerline Consolas:h11
 endif
