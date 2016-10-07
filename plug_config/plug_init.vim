@@ -58,6 +58,9 @@ if !empty(s:plug_file)
   " Git
   Plug 'tpope/vim-fugitive'
 
+  " Text editing
+  Plug 'godlygeek/tabular'
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
@@ -77,3 +80,6 @@ source ./plug_config/plug_git.vim
 
 " File system plugins configuration
 source ./plug_config/plug_filesystem.vim
+
+" Text editing plugins configuration
+source ./plug_config/plug_textediting.vim
