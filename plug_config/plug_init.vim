@@ -74,3 +74,6 @@ source ./plug_config/plug_statusbar.vim
 
 " Git plugins configuration
 source ./plug_config/plug_git.vim
+
+" File system plugins configuration
+source ./plug_config/plug_filesystem.vim
