@@ -61,6 +61,16 @@ if !empty(s:plug_file)
   " Text editing
   Plug 'godlygeek/tabular'
 
+  " Languages {{{
+  " Generic
+  Plug 'ludovicchabant/vim-gutentags'
+  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'tex'] }
+  Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+  Plug 'scrooloose/nerdcommenter'
+  autocmd! User YouCompleteMe call youcompleteme#Enable()
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
@@ -83,3 +93,6 @@ source ./plug_config/plug_filesystem.vim
 
 " Text editing plugins configuration
 source ./plug_config/plug_textediting.vim
+
+" Languages plugins configuration
+source ./plug_config/plug_languages.vim
