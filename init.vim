@@ -15,26 +15,15 @@
 "
 " Compatibility: Vim and Neovim
 "
-if has('win32')
-  let s:past_dir=getcwd()
-  if has('nvim')
-    execute "let s:rt_dir='" . $LOCALAPPDATA . "\\nvim'"
-  else
-    execute "let s:rt_dir='" . $HOME . "\\vimfiles'"
-  endif
-  execute "cd " . s:rt_dir
-endif
 
-source ./personal_config/basic_settings.vim
-source ./personal_config/abbrev_settings.vim
-source ./personal_config/mapping_settings.vim
+let $MYCONFIG_DIR = split(&runtimepath, ',')[0]
+
+source $MYCONFIG_DIR/personal_config/basic_settings.vim
+source $MYCONFIG_DIR/personal_config/abbrev_settings.vim
+source $MYCONFIG_DIR/personal_config/mapping_settings.vim
 
 if has("nvim") && !has("win32")
-  source ./personal_config/term_settings.vim
+  source $MYCONFIG_DIR/personal_config/term_settings.vim
 endif
 
-source ./plug_config/plug_init.vim
-
-if has('win32')
-  execute "cd " . s:past_dir
-endif
+source $MYCONFIG_DIR/plug_config/plug_init.vim

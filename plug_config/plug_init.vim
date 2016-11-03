@@ -83,16 +83,16 @@ silent! colorscheme seoul256
 " }}}
 
 " Status bar plugins configuration
-source ./plug_config/plug_statusbar.vim
+source $MYCONFIG_DIR/plug_config/plug_statusbar.vim
 
 " Git plugins configuration
-source ./plug_config/plug_git.vim
+source $MYCONFIG_DIR/plug_config/plug_git.vim
 
 " File system plugins configuration
-source ./plug_config/plug_filesystem.vim
+source $MYCONFIG_DIR/plug_config/plug_filesystem.vim
 
 " Text editing plugins configuration
-source ./plug_config/plug_textediting.vim
+source $MYCONFIG_DIR/plug_config/plug_textediting.vim
 
 " Languages plugins configuration
-source ./plug_config/plug_languages.vim
+source $MYCONFIG_DIR/plug_config/plug_languages.vim
