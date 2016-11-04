@@ -70,6 +70,7 @@ if !empty(s:plug_file)
   Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdcommenter'
   autocmd! User YouCompleteMe call youcompleteme#Enable()
+  " }}}
 
   call plug#end()
 else
