@@ -45,6 +45,7 @@ if !empty(s:plug_file)
   " Appearance {{{
   Plug 'junegunn/seoul256.vim'
   Plug 'itchyny/lightline.vim'
+  Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
   " }}}
