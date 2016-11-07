@@ -54,13 +54,14 @@ let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename' ] ]
+      \             [ 'condaenv', 'fugitive', 'filename' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
-      \   'filename': 'LightLineFilename'
+      \   'filename': 'LightLineFilename',
+      \   'condaenv': 'LightLineCondaEnv'
       \ },
       \ 'component': {
       \   'lineinfo': '%3l:%-2v',
@@ -103,5 +104,10 @@ function! LightLineFugitive()
     return branch !=# '' ? ''.branch : ''
   endif
   return ''
+endfunction
+
+function! LightLineCondaEnv()
+  let condaenv = $CONDA_DEFAULT_ENV
+  return condaenv
 endfunction
 " }}}
