@@ -19,7 +19,7 @@
 let g:gutentags_cscope_executable="gtags-cscope"
 
 " You Complete Me Configuration {{{
-let g:ycm_filetype_whitelist = { 'cpp': 1, 'tex': 1}
+let g:ycm_filetype_whitelist = { 'cpp': 1, 'tex': 1, 'python':1}
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -33,4 +33,26 @@ let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 " You Complete Me map
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jf :YcmCompleter FixIt<CR>
+
+let g:ycm_python_binary_path = 'python'
+" }}}
+
+" Syntastic configuration {{{
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" }}}
+
+" Braceless configuration {{{
+autocmd FileType python BracelessEnable +indent
+" }}}
+
+" vim-ipy configuration {{{
+"let g:nvim_ipy_perform_mappings = 0
+
+" }}}
+
+" deoplete configuration {{{
+let g:deoplete#enable_at_startup = 1
 " }}}

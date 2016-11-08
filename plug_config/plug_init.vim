@@ -45,6 +45,7 @@ if !empty(s:plug_file)
   " Appearance {{{
   Plug 'junegunn/seoul256.vim'
   Plug 'itchyny/lightline.vim'
+  Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
   " }}}
@@ -64,13 +65,26 @@ if !empty(s:plug_file)
   " Languages {{{
   " Generic
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'tex'] }
+  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'tex', 'python'] }
   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdcommenter'
   autocmd! User YouCompleteMe call youcompleteme#Enable()
 
+  Plug 'vim-syntastic/syntastic', {'for': ['python']}
+  Plug 'tweekmonster/braceless.vim'
+
+  Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
+  Plug 'shougo/neoinclude.vim'
+
+  " python
+  Plug 'cjrh/vim-conda'
+  Plug 'heavenshell/vim-pydocstring'
+  Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
+
+  " vimscript
+  Plug 'Shougo/neco-vim'
   " }}}
 
   call plug#end()
@@ -85,16 +99,16 @@ silent! colorscheme seoul256
 " }}}
 
 " Status bar plugins configuration
-source ./plug_config/plug_statusbar.vim
+source $MYCONFIG_DIR/plug_config/plug_statusbar.vim
 
 " Git plugins configuration
-source ./plug_config/plug_git.vim
+source $MYCONFIG_DIR/plug_config/plug_git.vim
 
 " File system plugins configuration
-source ./plug_config/plug_filesystem.vim
+source $MYCONFIG_DIR/plug_config/plug_filesystem.vim
 
 " Text editing plugins configuration
-source ./plug_config/plug_textediting.vim
+source $MYCONFIG_DIR/plug_config/plug_textediting.vim
 
 " Languages plugins configuration
-source ./plug_config/plug_languages.vim
+source $MYCONFIG_DIR/plug_config/plug_languages.vim

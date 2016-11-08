@@ -68,7 +68,7 @@ augroup END
 
 " various built in settings {{{
 set fenc=utf-8
-set encoding=utf-8
+silent! set encoding=utf-8
 " Enable 256 colors in ConEmu on Windows
 if has('win32') && !has('gui_running') && !empty($CONEMUBUILD)
   set termencoding=utf-8
