@@ -113,3 +113,16 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 " }}}
 
+" Fix backspace problem on Windows
+func! Backspace()
+  if col('.') == 1
+    if line('.')  != 1
+      return  "\<ESC>kA\<Del>"
+    else
+      return ""
+    endif
+  else
+    return "\<Left>\<Del>"
+  endif
+endfunc
+inoremap <BS> <c-r>=Backspace()<CR>

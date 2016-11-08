@@ -71,6 +71,8 @@ if !empty(s:plug_file)
   Plug 'scrooloose/nerdcommenter'
   autocmd! User YouCompleteMe call youcompleteme#Enable()
 
+  " }}}
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
