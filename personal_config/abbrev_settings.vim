@@ -26,4 +26,5 @@ iabbrev ssig -- <cr>Kwon-Young Choi<cr>kwon-young.choi@hotmail.fr
 iabbrev unsinged unsigned
 iabbrev Egien Eigen
 iabbrev unsi unsigned
+iabbrev bbox bounding box
 " }}}
