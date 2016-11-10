@@ -56,3 +56,8 @@ autocmd FileType python BracelessEnable +indent
 " deoplete configuration {{{
 let g:deoplete#enable_at_startup = 1
 " }}}
+
+" Chromatica configuration {{{
+let g:chromatica#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
+let g:chromatica#enable_debug=1
+" }}}
