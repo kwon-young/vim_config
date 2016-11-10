@@ -78,9 +78,10 @@ if !empty(s:plug_file)
   Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
   Plug 'shougo/neoinclude.vim'
 
+  Plug 'vim-scripts/DoxygenToolkit.vim'
+
   " python
   Plug 'cjrh/vim-conda'
-  Plug 'heavenshell/vim-pydocstring'
   Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
 
   " vimscript
