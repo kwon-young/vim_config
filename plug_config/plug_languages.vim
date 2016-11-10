@@ -37,6 +37,10 @@ nnoremap <leader>jf :YcmCompleter FixIt<CR>
 let g:ycm_python_binary_path = 'python'
 " }}}
 
+" UltiSnips configuration {{{
+let g:UltiSnipsSnippetsDir = "$MYCONFIG_DIR/UltiSnips"
+" }}}
+
 " Syntastic configuration {{{
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
