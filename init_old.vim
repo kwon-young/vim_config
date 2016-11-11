@@ -312,6 +312,7 @@ let g:terminal_color_14 = "#87D7D7"
 let g:terminal_color_15 = "#E4E4E4"
 let g:terminal_color_background="#171717"
 let g:terminal_color_foreground="#D0D0D0"
+" }}}
 
 " nvim-ipy configuration {{{
 let g:nvim_ipy_perform_mappings = 0
@@ -351,7 +352,6 @@ let g:chromatica#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
 
 " cscope configuration {{{
 set csprg=/usr/bin/gtags-cscope
-" }}}
 " }}}
 
 " deoplete configuration {{{
