@@ -63,7 +63,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Chromatica configuration {{{
 let g:chromatica#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
-let g:chromatica#enable_debug=1
+"let g:chromatica#enable_debug=1
 let g:chromatica#responsive_mode = 1
-let g:chromatica#highlight_feature_level = 1
+"let g:chromatica#highlight_feature_level = 1
 " }}}

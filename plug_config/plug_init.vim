@@ -88,8 +88,8 @@ if !empty(s:plug_file)
   Plug 'Shougo/neco-vim'
 
   " C++
-  "Plug 'arakashic/chromatica.nvim'
-  Plug 'octol/vim-cpp-enhanced-highlight'
+  Plug 'arakashic/chromatica.nvim'
+  "Plug 'octol/vim-cpp-enhanced-highlight'
   " }}}
 
   call plug#end()
