@@ -65,7 +65,7 @@ if !empty(s:plug_file)
   " Languages {{{
   " Generic
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'tex', 'python'] }
+  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'tex', 'python', 'snippets'] }
   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
@@ -79,14 +79,18 @@ if !empty(s:plug_file)
   Plug 'shougo/neoinclude.vim'
 
   Plug 'neomake/neomake'
+  Plug 'vim-scripts/DoxygenToolkit.vim'
 
   " python
   Plug 'cjrh/vim-conda'
-  Plug 'heavenshell/vim-pydocstring'
   Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
 
   " vimscript
   Plug 'Shougo/neco-vim'
+
+  " C++
+  Plug 'arakashic/chromatica.nvim'
+  "Plug 'octol/vim-cpp-enhanced-highlight'
   " }}}
 
   call plug#end()

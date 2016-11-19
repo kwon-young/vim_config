@@ -32,3 +32,24 @@ tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
 " }}}
+
+" neovim terminal emulator colorscheme {{{
+let g:terminal_color_0 = "#4E4E4E"
+let g:terminal_color_1 = "#d68787"
+let g:terminal_color_2 = "#5f865f"
+let g:terminal_color_3 = "#d8af5f"
+let g:terminal_color_4 = "#85acd4"
+let g:terminal_color_5 = "#D7AFAF"
+let g:terminal_color_6 = "#87AFAF"
+let g:terminal_color_7 = "#D0D0D0"
+let g:terminal_color_8 = "#626262"
+let g:terminal_color_9 = "#D75F87"
+let g:terminal_color_10 = "#87AF87"
+let g:terminal_color_11 = "#FFD787"
+let g:terminal_color_12 = "#ACD4FA"
+let g:terminal_color_13 = "#FFAFAF"
+let g:terminal_color_14 = "#87D7D7"
+let g:terminal_color_15 = "#E4E4E4"
+let g:terminal_color_background="#171717"
+let g:terminal_color_foreground="#D0D0D0"
+" }}}

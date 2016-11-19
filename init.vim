@@ -27,3 +27,8 @@ if has("nvim") && !has("win32")
 endif
 
 source $MYCONFIG_DIR/plug_config/plug_init.vim
+
+augroup cutecat
+   autocmd!
+   autocmd VimEnter * echo ">^.^<"
+augroup END

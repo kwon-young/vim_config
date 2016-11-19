@@ -19,7 +19,7 @@
 let g:gutentags_cscope_executable="gtags-cscope"
 
 " You Complete Me Configuration {{{
-let g:ycm_filetype_whitelist = { 'cpp': 1, 'tex': 1, 'python':1}
+let g:ycm_filetype_whitelist = { 'cpp': 1, 'tex': 1, 'python':1, 'snippets':1}
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -34,7 +34,11 @@ let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python3'
+" }}}
+
+" UltiSnips configuration {{{
+let g:UltiSnipsSnippetsDir = "$MYCONFIG_DIR/UltiSnips"
 " }}}
 
 " Syntastic configuration {{{
@@ -55,4 +59,11 @@ autocmd FileType python BracelessEnable +indent
 
 " deoplete configuration {{{
 let g:deoplete#enable_at_startup = 1
+" }}}
+
+" Chromatica configuration {{{
+let g:chromatica#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
+"let g:chromatica#enable_debug=1
+let g:chromatica#responsive_mode = 1
+"let g:chromatica#highlight_feature_level = 1
 " }}}
