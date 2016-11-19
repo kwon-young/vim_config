@@ -34,7 +34,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python3'
 " }}}
 
 " UltiSnips configuration {{{

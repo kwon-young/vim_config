@@ -1,0 +1,27 @@
+snippet h_canon "header class canonical methods" 
+${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}(const $1 &${1/.*/\l$0/});
+$1& operator=(const $1 &${3:rhs});
+endsnippet
+
+snippet s_op= "source operator=" 
+
+${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}& $1::operator=(const $1 &${2:rhs})
+{
+  if (this != &$2)
+  {
+    $3 = $2.$3;
+  }
+  return *this;
+}
+
+endsnippet
+
+snippet i_getset "inline getter setter"
+${2:double} get${1:X}() const {
+	return _${1/.*/\l$0/};
+}
+
+void set$1(const $2 ${1/.*/\l$0/}) {
+  _${1/.*/\l$0/} = ${1/.*/\l$0/};
+}
+endsnippet
