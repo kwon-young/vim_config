@@ -55,6 +55,9 @@ if !empty(s:plug_file)
     Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
   endif
+
+  " Searching
+  Plug 'eugen0329/vim-esearch'
   
   " Git
   Plug 'tpope/vim-fugitive'

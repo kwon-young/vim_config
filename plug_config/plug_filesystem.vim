@@ -19,3 +19,13 @@
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
+
+" vim_esearch configuration {{{
+let g:esearch = {
+      \ 'adapter':    'rg',
+      \ 'backend':    'nvim',
+      \ 'out':        'win',
+      \ 'batch_size': 1000,
+      \ 'use':        ['visual', 'hlsearch', 'last'],
+      \}
+" }}}
