@@ -67,3 +67,8 @@ let g:chromatica#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
 let g:chromatica#responsive_mode = 1
 "let g:chromatica#highlight_feature_level = 1
 " }}}
+
+" IndentLine configuration {{{
+"let g:indentLine_setColors = 0
+let g:indentLine_char = '¦'
+" }}}

@@ -78,7 +78,9 @@ if !empty(s:plug_file)
   Plug 'vim-syntastic/syntastic', {'for': ['python']}
   Plug 'tweekmonster/braceless.vim'
 
-  Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
+  Plug 'Yggdroot/indentLine'
+
+  "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
   Plug 'shougo/neoinclude.vim'
 
   Plug 'vim-scripts/DoxygenToolkit.vim'
