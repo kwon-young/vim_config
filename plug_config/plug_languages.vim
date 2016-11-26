@@ -54,7 +54,12 @@ autocmd FileType python BracelessEnable +indent
 
 " vim-ipy configuration {{{
 "let g:nvim_ipy_perform_mappings = 0
+" }}}
 
+" SimplyFold configuration {{{
+let g:SimpylFold_docstring_preview = 1
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 " }}}
 
 " deoplete configuration {{{
