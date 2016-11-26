@@ -34,7 +34,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
-let g:ycm_python_binary_path = 'python3'
+let g:ycm_python_binary_path = '/home/kwon-young/anaconda2/envs/python3/bin/python3'
 " }}}
 
 " UltiSnips configuration {{{
