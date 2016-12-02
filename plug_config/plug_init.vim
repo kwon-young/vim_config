@@ -74,7 +74,7 @@ if !empty(s:plug_file)
   " Languages {{{
   " Generic
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'tex', 'python', 'snippets'] }
+  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'python', 'snippets'] }
   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
