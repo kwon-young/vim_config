@@ -49,6 +49,12 @@ if !empty(s:plug_file)
   "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
   " }}}
+  
+  " Interface {{{
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
+  Plug 'duff/vim-scratch'
+  " }}}
 
   " File system
   if has('unix')
