@@ -96,6 +96,7 @@ if !empty(s:plug_file)
   Plug 'cjrh/vim-conda'
   Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
   Plug 'tmhedberg/SimpylFold'
+  Plug 'heavenshell/vim-pydocstring'
 
   " vimscript
   Plug 'Shougo/neco-vim'
