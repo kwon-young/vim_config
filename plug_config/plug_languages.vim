@@ -78,3 +78,7 @@ let g:chromatica#responsive_mode = 1
 "let g:indentLine_setColors = 0
 let g:indentLine_char = '¦'
 " }}}
+
+" pandoc configuration {{{
+let g:pandoc#modules#disabled = ["chdir"]
+" }}}
