@@ -19,6 +19,7 @@
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
+nnoremap <leader>u :Snippets<CR>
 
 " vim_esearch configuration {{{
 let g:esearch = {
