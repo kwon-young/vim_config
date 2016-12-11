@@ -19,7 +19,7 @@
 let g:gutentags_cscope_executable="gtags-cscope"
 
 " You Complete Me Configuration {{{
-let g:ycm_filetype_whitelist = { 'cpp': 1, 'python':1, 'snippets':1}
+let g:ycm_filetype_whitelist = { 'cpp': 1, 'python':1, 'snippets':1, 'tex':1, 'haskell':1}
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -81,4 +81,26 @@ let g:indentLine_char = '¦'
 
 " pandoc configuration {{{
 let g:pandoc#modules#disabled = ["chdir"]
+" }}}
+
+" vimtex {{{
+let g:tex_flavor = "latex"
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+      \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+      \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+      \ 're!\\hyperref\[[^]]*',
+      \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+      \ 're!\\(include(only)?|input){[^}]*',
+      \ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
+      \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
+      \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
+      \ ]
+" }}}
+
+" neco-ghc configuration {{{
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:necoghc_enable_detailed_browse = 1
 " }}}

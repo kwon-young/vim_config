@@ -74,7 +74,7 @@ if !empty(s:plug_file)
   " Languages {{{
   " Generic
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'python', 'snippets'] }
+  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'python', 'snippets', 'tex', 'haskell'] }
   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
@@ -109,6 +109,18 @@ if !empty(s:plug_file)
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax'
   Plug 'gbgar/pandoc-sections.vim'
+
+  " latex
+  Plug 'lervag/vimtex'
+
+  " haskell
+  "Plug 'neovimhaskell/haskell-vim'
+  Plug 'eagletmt/neco-ghc'
+  Plug 'kana/vim-textobj-user'
+  Plug 'gilligan/vim-textobj-haskell'
+  Plug 'itchyny/vim-haskell-indent'
+  Plug 'twinside/vim-haskellfold'
+  Plug 'travitch/hasksyn'
   " }}}
 
   call plug#end()
