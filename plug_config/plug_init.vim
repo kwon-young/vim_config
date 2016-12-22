@@ -121,8 +121,6 @@ if !empty(s:plug_file)
   " haskell
   "Plug 'neovimhaskell/haskell-vim'
   Plug 'eagletmt/neco-ghc'
-  Plug 'kana/vim-textobj-user'
-  Plug 'gilligan/vim-textobj-haskell'
   Plug 'itchyny/vim-haskell-indent'
   Plug 'twinside/vim-haskellfold'
   Plug 'travitch/hasksyn'
