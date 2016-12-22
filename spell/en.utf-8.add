@@ -11,3 +11,7 @@ DMOS
 versionable
 Convolutional
 convolutional
+Discriminatively
+multiscale
+SVM
+def
