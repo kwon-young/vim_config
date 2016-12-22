@@ -134,8 +134,7 @@ else
 endif
 
 " Settings colorscheme {{{
-let g:seoul256_background = 235
-set background=dark
+let g:seoul256_background = 236
 silent! colorscheme seoul256
 " }}}
 
