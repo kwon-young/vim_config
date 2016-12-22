@@ -85,7 +85,6 @@ if !empty(s:plug_file)
   Plug 'scrooloose/nerdcommenter'
   autocmd! User YouCompleteMe call youcompleteme#Enable()
 
-  Plug 'vim-syntastic/syntastic', {'for': ['python']}
   Plug 'tweekmonster/braceless.vim'
 
   Plug 'Yggdroot/indentLine'
