@@ -40,6 +40,7 @@ ln -sf "$(readlink -e "personal_config")" $HOME/.vim/personal_config
 ln -sf "$(readlink -e "plug_config")" $HOME/.vim/plug_config
 ln -sf "$(readlink -e "spell")" $HOME/.vim/spell
 ln -sf "$(readlink -e "UltiSnips")" $HOME/.vim/UltiSnips
+ln -sf "$(readlink -e "ftplugin")" $HOME/.vim/ftplugin
 
 # For Neovim
 mkdir -p $HOME/.local/share/nvim/swp
