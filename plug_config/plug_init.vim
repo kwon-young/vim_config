@@ -99,7 +99,9 @@ if !empty(s:plug_file)
   Plug 'vim-scripts/DoxygenToolkit.vim'
 
   " python
-  Plug 'cjrh/vim-conda'
+  if has("nvim")
+    Plug 'cjrh/vim-conda'
+  endif
   Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
   Plug 'tmhedberg/SimpylFold'
   Plug 'heavenshell/vim-pydocstring'
