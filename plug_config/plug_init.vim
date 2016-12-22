@@ -15,6 +15,10 @@
 " Compatibility: Vim and Neovim
 "
 
+scriptencoding utf-8
+set encoding=utf-8
+filetype plugin on
+
 if has('win32')
   let s:plug_file = glob('~/vimfiles/autoload/plug.vim')
 elseif has('unix')
