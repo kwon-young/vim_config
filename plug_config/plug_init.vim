@@ -15,6 +15,10 @@
 " Compatibility: Vim and Neovim
 "
 
+scriptencoding utf-8
+set encoding=utf-8
+filetype plugin on
+
 if has('win32')
   let s:plug_file = glob('~/vimfiles/autoload/plug.vim')
 elseif has('unix')
@@ -44,6 +48,7 @@ if !empty(s:plug_file)
 
   " Appearance {{{
   Plug 'junegunn/seoul256.vim'
+  Plug 'git@github.com:fmoralesc/molokayo.git'
   Plug 'itchyny/lightline.vim'
   Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
@@ -60,6 +65,7 @@ if !empty(s:plug_file)
   if has('unix')
     Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'tpope/vim-eunuch'
   endif
 
   " Searching
@@ -81,10 +87,10 @@ if !empty(s:plug_file)
   Plug 'scrooloose/nerdcommenter'
   autocmd! User YouCompleteMe call youcompleteme#Enable()
 
-  Plug 'vim-syntastic/syntastic', {'for': ['python']}
   Plug 'tweekmonster/braceless.vim'
 
-  Plug 'Yggdroot/indentLine'
+  " !!!! Breaks vim-pandoc-syntax highlighting !!!!
+  Plug 'Yggdroot/indentLine' , { 'for': ['python'] }
 
   "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
   Plug 'shougo/neoinclude.vim'
@@ -93,7 +99,9 @@ if !empty(s:plug_file)
   Plug 'vim-scripts/DoxygenToolkit.vim'
 
   " python
-  Plug 'cjrh/vim-conda'
+  if has("nvim")
+    Plug 'cjrh/vim-conda'
+  endif
   Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
   Plug 'tmhedberg/SimpylFold'
   Plug 'heavenshell/vim-pydocstring'
@@ -128,8 +136,7 @@ else
 endif
 
 " Settings colorscheme {{{
-let g:seoul256_background = 235
-set background=dark
+let g:seoul256_background = 236
 silent! colorscheme seoul256
 " }}}
 
