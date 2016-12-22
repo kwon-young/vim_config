@@ -88,7 +88,8 @@ if !empty(s:plug_file)
 
   Plug 'tweekmonster/braceless.vim'
 
-  Plug 'Yggdroot/indentLine'
+  " !!!! Breaks vim-pandoc-syntax highlighting !!!!
+  Plug 'Yggdroot/indentLine' , { 'for': ['python'] }
 
   "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
   Plug 'shougo/neoinclude.vim'
