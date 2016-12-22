@@ -64,6 +64,7 @@ if !empty(s:plug_file)
   if has('unix')
     Plug 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'tpope/vim-eunuch'
   endif
 
   " Searching
