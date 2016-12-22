@@ -23,7 +23,11 @@ set guioptions-=L  "remove left-hand scroll bar
 " }}}
 
 " Set font
-set guifont=Powerline_Consolas:h11
+if has("win32")
+  set guifont=Powerline_Consolas:h11
+else
+  set guifont=Inconsolata\ for\ Powerline\ Medium\ 14
+endif
 
 " Disable bell
 set vb t_vb=
