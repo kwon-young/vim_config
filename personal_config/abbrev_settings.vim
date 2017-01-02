@@ -27,3 +27,8 @@ iabbrev unsinged unsigned
 iabbrev Egien Eigen
 iabbrev unsi unsigned
 " }}}
+
+" abbreviation {{{
+iabbrev sota state-of-the-art
+iabbrev Sota State-of-the-art
+" }}}
