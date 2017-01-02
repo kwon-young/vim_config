@@ -114,6 +114,7 @@ if !empty(s:plug_file)
   " C++
   Plug 'arakashic/chromatica.nvim'
   "Plug 'octol/vim-cpp-enhanced-highlight'
+  Plug 'derekwyatt/vim-fswitch'
   
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
