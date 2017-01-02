@@ -59,6 +59,7 @@ if !empty(s:plug_file)
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'duff/vim-scratch'
+  Plug 'yuttie/comfortable-motion.vim'
   " }}}
 
   " File system
@@ -144,6 +145,10 @@ source $MYCONFIG_DIR/plug_config/plug_statusbar.vim
 
 " Git plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_git.vim
+
+" Interface plugins configuration {{{
+source $MYCONFIG_DIR/plug_config/plug_interface.vim
+" }}}
 
 " File system plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_filesystem.vim
