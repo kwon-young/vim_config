@@ -81,6 +81,13 @@ let g:indentLine_char = '¦'
 
 " pandoc configuration {{{
 let g:pandoc#modules#disabled = ["chdir"]
+augroup Pandoc
+  " this one is which you're most likely to use?
+  autocmd!
+  autocmd Filetype pandoc set makeprg=dopandoc\ % 
+  autocmd BufWritePost *.md Neomake!
+augroup end
+
 " }}}
 
 " vimtex {{{
