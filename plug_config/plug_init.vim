@@ -60,6 +60,7 @@ if !empty(s:plug_file)
   Plug 'junegunn/limelight.vim'
   Plug 'duff/vim-scratch'
   Plug 'yuttie/comfortable-motion.vim'
+  Plug 'jszakmeister/vim-togglecursor'
   " }}}
 
   " File system
