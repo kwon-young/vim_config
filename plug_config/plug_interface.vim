@@ -22,3 +22,7 @@ let g:comfortable_motion_air_drag = 2.0
 nnoremap <silent> <A-f> :call comfortable_motion#flick(40)<CR>
 nnoremap <silent> <A-d> :call comfortable_motion#flick(-40)<CR>
 " }}}
+
+" vim-highlightedyank plugin configuration {{{
+hi HighlightedyankRegion cterm=underline gui=underline
+" }}}
