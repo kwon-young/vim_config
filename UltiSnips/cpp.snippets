@@ -25,3 +25,15 @@ void set$1(const $2 ${1/.*/\l$0/}) {
   _${1/.*/\l$0/} = ${1/.*/\l$0/};
 }
 endsnippet
+
+snippet fexist "if file exist" 
+auto fexist = [] (const std::string filename) {
+  std::ifstream ifile(filename); return ifile;
+};
+if (fexist(${1:filename}))
+{
+	$2
+} else {
+	$3
+}
+endsnippet
