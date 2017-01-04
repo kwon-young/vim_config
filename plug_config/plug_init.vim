@@ -62,6 +62,7 @@ if !empty(s:plug_file)
   Plug 'yuttie/comfortable-motion.vim'
   Plug 'jszakmeister/vim-togglecursor'
   Plug 'machakann/vim-highlightedyank'
+  Plug 'vim-utils/vim-troll-stopper'
   " }}}
 
   " File system
