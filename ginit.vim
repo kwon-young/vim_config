@@ -17,7 +17,7 @@
 
 " Configure font
 if has('unix')
-  GuiFont Inconsolata\ for\ Powerline:b:h15
+  GuiFont Inconsolata\ for\ Powerline:b:h12
 elseif has('win32')
   GuiFont! Powerline Consolas:h11
 endif

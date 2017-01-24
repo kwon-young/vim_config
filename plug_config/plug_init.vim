@@ -48,7 +48,6 @@ if !empty(s:plug_file)
 
   " Appearance {{{
   Plug 'junegunn/seoul256.vim'
-  Plug 'git@github.com:fmoralesc/molokayo.git'
   Plug 'itchyny/lightline.vim'
   Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
@@ -70,9 +69,6 @@ if !empty(s:plug_file)
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-eunuch'
   endif
-
-  " Searching
-  Plug 'eugen0329/vim-esearch'
   
   " Git
   Plug 'tpope/vim-fugitive'
@@ -83,8 +79,8 @@ if !empty(s:plug_file)
   " Languages {{{
   " Generic
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'python', 'snippets', 'tex', 'haskell'] }
-  Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+  "Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'tex', 'python', 'snippets'] }
+  "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdcommenter'
