@@ -72,9 +72,6 @@ if !empty(s:plug_file)
     Plug 'tpope/vim-eunuch'
   endif
 
-  " Searching
-  Plug 'eugen0329/vim-esearch'
-  
   " Git
   Plug 'tpope/vim-fugitive'
 
