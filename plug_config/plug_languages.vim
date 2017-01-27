@@ -111,3 +111,14 @@ let g:ycm_semantic_triggers.tex = [
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:necoghc_enable_detailed_browse = 1
 " }}}
+
+" Neomake configuration {{{
+" autocmd in pandoc configuration
+" For python
+"let g:neomake_python_enabled_makers = ['pylama']
+augroup python_maker
+  au!
+  au BufWritePost *.py Neomake pylama
+augroup END
+let g:neomake_verbose = 0
+" }}}

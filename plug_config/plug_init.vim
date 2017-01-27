@@ -96,7 +96,7 @@ if !empty(s:plug_file)
   "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
   Plug 'shougo/neoinclude.vim'
 
-  Plug 'neomake/neomake'
+  Plug 'kwon-young/neomake'
   Plug 'vim-scripts/DoxygenToolkit.vim'
 
   " python
