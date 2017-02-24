@@ -96,16 +96,16 @@ if !empty(s:plug_file)
   Plug 'Yggdroot/indentLine' , { 'for': ['python'] }
 
   "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
-  Plug 'shougo/neoinclude.vim'
+  "Plug 'shougo/neoinclude.vim'
 
   Plug 'kwon-young/neomake'
   Plug 'vim-scripts/DoxygenToolkit.vim'
 
   " python
   if has("nvim")
-    Plug 'cjrh/vim-conda'
+    "Plug 'cjrh/vim-conda'
   endif
-  Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
+  "Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
   Plug 'tmhedberg/SimpylFold'
   Plug 'heavenshell/vim-pydocstring'
 
