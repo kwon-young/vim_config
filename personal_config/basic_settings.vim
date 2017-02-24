@@ -130,3 +130,8 @@ func! Backspace()
   endif
 endfunc
 inoremap <BS> <c-r>=Backspace()<CR>
+
+augroup javascool
+  autocmd!
+  autocmd BufEnter *.jvs set filetype=java
+augroup END
