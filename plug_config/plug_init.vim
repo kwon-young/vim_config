@@ -77,6 +77,9 @@ if !empty(s:plug_file)
   " Text editing
   Plug 'godlygeek/tabular'
 
+  " Searching
+  Plug 'mileszs/ack.vim'
+
   " Languages {{{
   " Generic
   Plug 'ludovicchabant/vim-gutentags'
