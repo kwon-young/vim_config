@@ -109,6 +109,7 @@ set noeb vb t_vb=
 if has('nvim')
   set inccommand=nosplit
 endif
+compiler gcc
 " }}}
 
 "Set the status line options. Make it show more information. {{{

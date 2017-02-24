@@ -120,5 +120,10 @@ augroup python_maker
   au!
   au BufWritePost *.py Neomake pylama
 augroup END
+augroup cpp_maker
+  autocmd!
+  autocmd FileType cpp set makeprg=make\ -C\ build\ -j8
+augroup END
+nnoremap <F5> :Neomake!<CR>
 let g:neomake_verbose = 0
 " }}}
