@@ -131,3 +131,7 @@ augroup END
 nnoremap <F5> :Neomake!<CR>
 let g:neomake_verbose = 0
 " }}}
+
+" A.vim configuration {{{
+nnoremap <leader>a :A<CR>
+" }}}
