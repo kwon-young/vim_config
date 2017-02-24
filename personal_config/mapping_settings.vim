@@ -26,6 +26,8 @@ inoremap kj <Esc>
 
 " U command in insert mode
 inoremap <a-u> <esc>viw~ea
+" remap i_ctrl-r to alt-r
+inoremap <a-r> <c-r>
 " }}}
 
 " Normal mode mappings {{{
@@ -72,4 +74,8 @@ nnoremap ? ?\v
 " }}}
 
 " F1-12 mappings {{{
+" }}}
+
+" macros {{{
+let @d = 'o=getcwd()jkT/dT '
 " }}}
