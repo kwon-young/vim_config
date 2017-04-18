@@ -94,6 +94,7 @@ set relativenumber
 let loaded_spellfile_plugin=0
 set spell
 set spelllang=en_us
+"set spelllang=fr
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -108,8 +109,12 @@ set showtabline=0
 set noeb vb t_vb=
 if has('nvim')
   set inccommand=nosplit
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 endif
 compiler gcc
+if executable('rg')
+  set grepprg=rg\ --vimgrep
+endif
 " }}}
 
 "Set the status line options. Make it show more information. {{{
