@@ -91,8 +91,8 @@ nnoremap <a-k> :wincmd k<CR>
 nnoremap <a-j> :wincmd j<CR>
 nnoremap <a-h> :wincmd h<CR>
 " scroll with alt
-"nnoremap <a-f> <c-e><c-e>
-"nnoremap <a-d> <c-y><c-y>
+nnoremap <a-f> <c-e><c-e>
+nnoremap <a-d> <c-y><c-y>
 " move to comfortable_motion plugin
 " }}}
 

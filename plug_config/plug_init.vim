@@ -58,7 +58,7 @@ if !empty(s:plug_file)
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'duff/vim-scratch'
-  Plug 'yuttie/comfortable-motion.vim'
+  "Plug 'yuttie/comfortable-motion.vim'
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-utils/vim-troll-stopper'
   " }}}
