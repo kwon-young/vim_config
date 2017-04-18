@@ -15,8 +15,43 @@
 " Compatibility: Vim and Neovim
 "
 
-let maploca=","
-let mapleader="ù"
+" layout specific {{{
+
+let s:max_layout = 2
+
+if exists("s:layout")
+  "echo "layout exist"
+else
+  let s:layout = 0
+endif
+
+if s:layout == 0
+  let mapleader = "'"
+elseif s:layout == 1
+  let mapleader = "ù"
+  let maploca = ","
+endif
+
+function! SetLayout()
+  if s:layout == 0
+    echo "using qwerty layout"
+    nnoremap ; :
+    nnoremap : ;
+  elseif s:layout == 1
+    echo "using azerty layout"
+    nunmap ;
+    nunmap :
+  endif
+endfunction
+
+function! ToggleLayout()
+  let s:layout = (s:layout + 1) % s:max_layout
+  echo "now source your conf"
+endfunction
+
+call SetLayout()
+
+" }}}
 
 " Insert mode mappings {{{
 
