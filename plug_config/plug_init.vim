@@ -75,6 +75,7 @@ if !empty(s:plug_file)
 
   " Text editing
   Plug 'godlygeek/tabular'
+  Plug 'kwon-young/vim-pairify'
 
   " Searching
   Plug 'mileszs/ack.vim'

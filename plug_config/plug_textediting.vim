@@ -29,3 +29,6 @@ endfunction
 
 " Mappings
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+" vim-pairify configuration
+imap <a-j> <Plug>(pairify-complete)
