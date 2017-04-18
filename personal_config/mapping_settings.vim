@@ -34,11 +34,11 @@ endif
 
 function! SetLayout()
   if s:layout == 0
-    echo "using qwerty layout"
+    "echo "using qwerty layout"
     nnoremap ; :
     nnoremap : ;
   elseif s:layout == 1
-    echo "using azerty layout"
+    "echo "using azerty layout"
     nunmap ;
     nunmap :
   endif
