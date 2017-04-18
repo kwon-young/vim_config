@@ -74,6 +74,13 @@ nnoremap <leader>eg :vsplit $MYGVIMRC<cr>
 nnoremap <leader>sg :source $MYGVIMRC<cr>
 " }}}
 
+" Edit note file {{{
+nnoremap <leader>en :edit $HOME/.local/share/nvim/note.md<CR>
+nnoremap <leader>exn :vsplit $HOME/.local/share/nvim/note.md<CR>
+nnoremap <leader>esn :split $HOME/.local/share/nvim/note.md<CR>
+nnoremap <leader>etn :tabedit $HOME/.local/share/nvim/note.md<CR>
+" }}}
+
 " delete buffer without deleting split
 nnoremap <leader>d :bp\|bd #<cr>
 
