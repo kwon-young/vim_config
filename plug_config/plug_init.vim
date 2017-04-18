@@ -140,8 +140,7 @@ else
 endif
 
 " Settings colorscheme {{{
-let g:seoul256_background = 236
-silent! colorscheme seoul256
+source $MYCONFIG_DIR/plug_config/plug_colorscheme.vim
 " }}}
 
 " Status bar plugins configuration
