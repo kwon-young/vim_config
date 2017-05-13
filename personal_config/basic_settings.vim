@@ -129,3 +129,7 @@ func! Backspace()
   endif
 endfunc
 inoremap <BS> <c-r>=Backspace()<CR>
+
+" Fortran configuration {{{
+let fortran_ident_less=1
+" }}}
