@@ -122,7 +122,7 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 " }}}
 
-" Fix backspace problem on Windows
+" Fix backspace problem on Windows {{{
 func! Backspace()
   if col('.') == 1
     if line('.')  != 1
@@ -135,6 +135,32 @@ func! Backspace()
   endif
 endfunc
 inoremap <BS> <c-r>=Backspace()<CR>
+" }}}
+
+" insert date {{{
+func! Date()
+  if v:lc_time =~ "fr_FR"
+    return strftime("%A %d %B %Y")
+  else
+    return strftime("%B %d, %Y")
+  endif
+endfunc
+" }}}
+
+" update date in file {{{
+func! UpdateDate()
+  let save_cursor = getpos(".")
+  if &filetype =~ "pandoc"
+    if v:lc_time =~ "fr_FR"
+      keepjumps exe "%s/\\v(date: )\\w+ \\d\\d \\w+ \\d\\d\\d\\d/\\1" . Date()
+    else
+      keepjumps exe "%s/\\v(date: )\\w+ \\d\\d, \\d\\d\\d\\d/\\1" . Date()
+    endif
+  endif
+  call histdel('search', -1)
+  call setpos('.', save_cursor)
+endfunc
+" }}}
 
 augroup javascool
   autocmd!
