@@ -78,7 +78,10 @@ if !empty(s:plug_file)
   Plug 'kwon-young/vim-pairify'
 
   " Searching
-  Plug 'mileszs/ack.vim'
+  "Plug 'mileszs/ack.vim'
+
+  "" Real time collaboration
+  "Plug 'floobits/floobits-neovim', {'do': ':UpdateRemotePlugins'}
 
   " Languages {{{
   " Generic
@@ -101,6 +104,8 @@ if !empty(s:plug_file)
   Plug 'kwon-young/neomake'
   Plug 'vim-scripts/DoxygenToolkit.vim'
 
+  "Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+
   " python
   if has("nvim")
     "Plug 'cjrh/vim-conda'
@@ -113,10 +118,13 @@ if !empty(s:plug_file)
   Plug 'Shougo/neco-vim'
 
   " C++
-  Plug 'arakashic/chromatica.nvim'
-  "Plug 'octol/vim-cpp-enhanced-highlight'
+  "Plug 'arakashic/chromatica.nvim'
+  Plug 'octol/vim-cpp-enhanced-highlight'
   Plug 'derekwyatt/vim-fswitch'
   Plug 'vim-scripts/a.vim'
+  if has("nvim")
+    "Plug 'bbchung/Clamp'
+  endif
   
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
@@ -149,9 +157,8 @@ source $MYCONFIG_DIR/plug_config/plug_statusbar.vim
 " Git plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_git.vim
 
-" Interface plugins configuration {{{
+" Interface plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_interface.vim
-" }}}
 
 " File system plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_filesystem.vim
