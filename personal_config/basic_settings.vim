@@ -94,6 +94,7 @@ set relativenumber
 let loaded_spellfile_plugin=0
 set spell
 set spelllang=en_us
+"set spelllang=fr
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -108,6 +109,11 @@ set showtabline=0
 set noeb vb t_vb=
 if has('nvim')
   set inccommand=nosplit
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+endif
+compiler gcc
+if executable('rg')
+  set grepprg=rg\ --vimgrep
 endif
 " }}}
 
@@ -132,4 +138,11 @@ inoremap <BS> <c-r>=Backspace()<CR>
 
 " Fortran configuration {{{
 let fortran_ident_less=1
+" }}}
+
+" Javascool Conf {{{
+augroup javascool
+  autocmd!
+  autocmd BufEnter *.jvs set filetype=java
+augroup END
 " }}}

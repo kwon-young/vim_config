@@ -48,7 +48,6 @@ if !empty(s:plug_file)
 
   " Appearance {{{
   Plug 'junegunn/seoul256.vim'
-  Plug 'git@github.com:fmoralesc/molokayo.git'
   Plug 'itchyny/lightline.vim'
   Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
@@ -60,7 +59,7 @@ if !empty(s:plug_file)
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'duff/vim-scratch'
-  Plug 'yuttie/comfortable-motion.vim'
+  "Plug 'yuttie/comfortable-motion.vim'
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-utils/vim-troll-stopper'
   " }}}
@@ -80,11 +79,15 @@ if !empty(s:plug_file)
 
   " Text editing
   Plug 'godlygeek/tabular'
+  Plug 'kwon-young/vim-pairify'
+
+  " Searching
+  Plug 'mileszs/ack.vim'
 
   " Languages {{{
   " Generic
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'python', 'snippets', 'tex', 'haskell'] }
+  Plug 'Valloric/YouCompleteMe' , { 'for': ['cpp', 'c', 'python', 'snippets', 'tex', 'haskell', 'pandoc', 'vim'] }
   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
@@ -97,9 +100,9 @@ if !empty(s:plug_file)
   Plug 'Yggdroot/indentLine' , { 'for': ['python'] }
 
   "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
-  Plug 'shougo/neoinclude.vim'
+  "Plug 'shougo/neoinclude.vim'
 
-  Plug 'neomake/neomake'
+  Plug 'kwon-young/neomake'
   Plug 'vim-scripts/DoxygenToolkit.vim'
 
   " python
@@ -118,6 +121,7 @@ if !empty(s:plug_file)
   "Plug 'octol/vim-cpp-enhanced-highlight'
   Plug 'derekwyatt/vim-fswitch'
   Plug 'critiqjo/lldb.nvim'
+  Plug 'vim-scripts/a.vim'
   
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
@@ -141,8 +145,7 @@ else
 endif
 
 " Settings colorscheme {{{
-let g:seoul256_background = 236
-silent! colorscheme seoul256
+source $MYCONFIG_DIR/plug_config/plug_colorscheme.vim
 " }}}
 
 " Status bar plugins configuration

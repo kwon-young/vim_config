@@ -19,7 +19,7 @@
 let g:gutentags_cscope_executable="gtags-cscope"
 
 " You Complete Me Configuration {{{
-let g:ycm_filetype_whitelist = { 'cpp': 1, 'python':1, 'snippets':1, 'tex':1, 'haskell':1}
+let g:ycm_filetype_whitelist = { 'cpp': 1, 'python':1, 'snippets':1, 'tex':1, 'haskell':1, 'pandoc':1, 'vim':1}
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -129,3 +129,26 @@ nnoremap <leader>lp :LL print <C-R>=expand('<cword>')<CR>
 vnoremap <leader>lp :<C-U>LL print <C-R>=lldb#util#get_selection()<CR><CR>
 " }}}
 
+" Ack.vim configuration {{{
+let g:ackprg = "ag --vimgrep"
+" }}}
+
+" Neomake configuration {{{
+" autocmd in pandoc configuration
+" For python
+"let g:neomake_python_enabled_makers = ['pylama']
+augroup python_maker
+  au!
+  au BufWritePost *.py Neomake pylama
+augroup END
+augroup cpp_maker
+  autocmd!
+  autocmd FileType cpp set makeprg=make\ -C\ build\ -j8
+augroup END
+nnoremap <F5> :Neomake!<CR>
+let g:neomake_verbose = 0
+" }}}
+
+" A.vim configuration {{{
+nnoremap <leader>a :A<CR>
+" }}}
