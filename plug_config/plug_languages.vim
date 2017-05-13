@@ -34,7 +34,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
-let g:ycm_python_binary_path = '/home/kwon-young/anaconda2/envs/python3/bin/python3'
+let g:ycm_python_binary_path = 'python'
 " }}}
 
 " UltiSnips configuration {{{
@@ -71,7 +71,7 @@ let g:deoplete#enable_at_startup = 1
 let g:chromatica#libclang_path = '/usr/lib/llvm-3.8/lib/libclang.so'
 "let g:chromatica#enable_debug=1
 let g:chromatica#responsive_mode = 1
-"let g:chromatica#highlight_feature_level = 1
+let g:chromatica#highlight_feature_level = 0
 " }}}
 
 " IndentLine configuration {{{
@@ -111,3 +111,21 @@ let g:ycm_semantic_triggers.tex = [
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:necoghc_enable_detailed_browse = 1
 " }}}
+
+" lldb.vim mappings {{{
+"nnoremap <leader>lb <Plug>LLBreakSwitch
+nnoremap <leader>lb :execute ":LL breakpoint set -f " . expand("%:t") . " -l " . getcurpos()[1]<CR>
+nnoremap <leader>lB :LL breakpoint delete 
+"vmap <F2> <Plug>LLStdInSelected
+"nnoremap <F4> :LLstdin<CR>
+nnoremap <leader>ld :LLmode debug<CR>
+nnoremap <leader>lc :LLmode code<CR>
+nnoremap <F9> :LL thread continue<CR>
+nnoremap <F10> :LL thread step-over<CR>
+nnoremap <F11> :LL thread step-in<CR>
+nnoremap <F12> :LL process kill<CR>
+nnoremap <F8> :LL process launch<CR>
+nnoremap <leader>lp :LL print <C-R>=expand('<cword>')<CR>
+vnoremap <leader>lp :<C-U>LL print <C-R>=lldb#util#get_selection()<CR><CR>
+" }}}
+

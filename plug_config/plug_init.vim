@@ -53,6 +53,7 @@ if !empty(s:plug_file)
   Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
+  Plug 'ap/vim-css-color'
   " }}}
   
   " Interface {{{
