@@ -37,6 +37,8 @@ function! SetLayout()
     "echo "using qwerty layout"
     nnoremap ; :
     nnoremap : ;
+    vnoremap ; :
+    vnoremap : ;
   elseif s:layout == 1
     "echo "using azerty layout"
     nunmap ;
@@ -109,6 +111,8 @@ nnoremap <leader>n :cnext<cr>
 nnoremap <leader>N :cprevious<cr>
 " diffupdate to du
 nnoremap du :diffupdate<CR>
+nnoremap + ddp
+nnoremap - ddkP
 
 " Add very magic to search command
 nnoremap / /\v
