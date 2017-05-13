@@ -52,6 +52,7 @@ if !empty(s:plug_file)
   Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
+  Plug 'ap/vim-css-color'
   " }}}
   
   " Interface {{{
@@ -70,6 +71,9 @@ if !empty(s:plug_file)
     Plug 'tpope/vim-eunuch'
   endif
 
+  " Searching
+  "Plug 'eugen0329/vim-esearch'
+  
   " Git
   Plug 'tpope/vim-fugitive'
 
@@ -117,10 +121,11 @@ if !empty(s:plug_file)
   " vimscript
   Plug 'Shougo/neco-vim'
 
-  " C++
+  " C/C++
   "Plug 'arakashic/chromatica.nvim'
   Plug 'octol/vim-cpp-enhanced-highlight'
   Plug 'derekwyatt/vim-fswitch'
+  Plug 'critiqjo/lldb.nvim'
   Plug 'vim-scripts/a.vim'
   if has("nvim")
     "Plug 'bbchung/Clamp'

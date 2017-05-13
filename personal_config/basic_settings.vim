@@ -162,7 +162,13 @@ func! UpdateDate()
 endfunc
 " }}}
 
+" Fortran configuration {{{
+let fortran_ident_less=1
+" }}}
+
+" Javascool Conf {{{
 augroup javascool
   autocmd!
   autocmd BufEnter *.jvs set filetype=java
 augroup END
+" }}}
