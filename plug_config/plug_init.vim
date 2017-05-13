@@ -72,7 +72,7 @@ if !empty(s:plug_file)
   endif
 
   " Searching
-  Plug 'eugen0329/vim-esearch'
+  "Plug 'eugen0329/vim-esearch'
   
   " Git
   Plug 'tpope/vim-fugitive'
@@ -103,19 +103,20 @@ if !empty(s:plug_file)
 
   " python
   if has("nvim")
-    Plug 'cjrh/vim-conda'
+    "Plug 'cjrh/vim-conda'
   endif
-  Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
+  "Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
   Plug 'tmhedberg/SimpylFold'
   Plug 'heavenshell/vim-pydocstring'
 
   " vimscript
   Plug 'Shougo/neco-vim'
 
-  " C++
+  " C/C++
   Plug 'arakashic/chromatica.nvim'
   "Plug 'octol/vim-cpp-enhanced-highlight'
   Plug 'derekwyatt/vim-fswitch'
+  Plug 'critiqjo/lldb.nvim'
   
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
