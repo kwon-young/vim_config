@@ -84,7 +84,7 @@ let g:pandoc#modules#disabled = ["chdir"]
 augroup Pandoc
   " this one is which you're most likely to use?
   autocmd!
-  autocmd Filetype pandoc set makeprg=dopandoc\ % 
+  autocmd Filetype pandoc set makeprg=do-pandoc.rb\ % 
   autocmd BufWritePost *.md Neomake!
 augroup end
 
@@ -116,6 +116,10 @@ let g:necoghc_enable_detailed_browse = 1
 let g:ackprg = "ag --vimgrep"
 " }}}
 
+" Clamp configuration {{{
+let g:clamp_libclang_file = '/usr/lib/llvm-3.8/lib/libclang.so'
+" }}}
+
 " Neomake configuration {{{
 " autocmd in pandoc configuration
 " For python
@@ -134,4 +138,23 @@ let g:neomake_verbose = 0
 
 " A.vim configuration {{{
 nnoremap <leader>a :A<CR>
+" }}}
+
+" LanguageClient-neovim configuration {{{
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+      \ 'cpp': ['/home/kwon-young/prog/llvm/build/bin/clangd'],
+      \ }
+
+"" Automatically start language servers.
+"let g:LanguageClient_autoStart = 1
+
+"nnoremap <silent> K :call
+"LanguageClient_textDocument_hover()<CR>
+"nnoremap <silent> gd :call
+"LanguageClient_textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call
+"LanguageClient_textDocument_rename()<CR>
 " }}}
