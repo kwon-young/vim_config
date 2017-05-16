@@ -1,0 +1,16 @@
+snippet code "code blocks" 
+\`\`\`${1:java}
+$2
+\`\`\`
+endsnippet
+
+snippet yaml-header "yaml-header template"
+---
+title: ${1:`!v expand("%:t")`}
+author: Kwon-Young Choi
+institute: Intuidoc team
+date: ${2:`!v strftime("%A %d %B %Y")`}
+abstract: ${3:Abstract.}
+...
+
+endsnippet

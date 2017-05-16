@@ -94,6 +94,7 @@ set relativenumber
 let loaded_spellfile_plugin=0
 set spell
 set spelllang=en_us
+"set spelllang=fr
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -108,6 +109,11 @@ set showtabline=0
 set noeb vb t_vb=
 if has('nvim')
   set inccommand=nosplit
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+endif
+compiler gcc
+if executable('rg')
+  set grepprg=rg\ --vimgrep
 endif
 " }}}
 
@@ -116,7 +122,7 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 " }}}
 
-" Fix backspace problem on Windows
+" Fix backspace problem on Windows {{{
 func! Backspace()
   if col('.') == 1
     if line('.')  != 1
@@ -129,3 +135,40 @@ func! Backspace()
   endif
 endfunc
 inoremap <BS> <c-r>=Backspace()<CR>
+" }}}
+
+" insert date {{{
+func! Date()
+  if v:lc_time =~ "fr_FR"
+    return strftime("%A %d %B %Y")
+  else
+    return strftime("%B %d, %Y")
+  endif
+endfunc
+" }}}
+
+" update date in file {{{
+func! UpdateDate()
+  let save_cursor = getpos(".")
+  if &filetype =~ "pandoc"
+    if v:lc_time =~ "fr_FR"
+      keepjumps exe "%s/\\v(date: )\\w+ \\d\\d \\w+ \\d\\d\\d\\d/\\1" . Date()
+    else
+      keepjumps exe "%s/\\v(date: )\\w+ \\d\\d, \\d\\d\\d\\d/\\1" . Date()
+    endif
+  endif
+  call histdel('search', -1)
+  call setpos('.', save_cursor)
+endfunc
+" }}}
+
+" Fortran configuration {{{
+let fortran_ident_less=1
+" }}}
+
+" Javascool Conf {{{
+augroup javascool
+  autocmd!
+  autocmd BufEnter *.jvs set filetype=java
+augroup END
+" }}}

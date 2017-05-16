@@ -54,14 +54,20 @@ let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'condaenv', 'fugitive', 'filename' ] ]
+      \             [ 'condaenv', 'fugitive', 'filename' ] ],
+      \   'right':  [ [ 'lineinfo' ], [ 'percent' ],
+      \               [ 'fileformat', 'fileencoding', 'filetype', 'neomake_working',
+      \                 'neomake_errors', 'neomake_warnings'  ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename',
-      \   'condaenv': 'LightLineCondaEnv'
+      \   'condaenv': 'LightLineCondaEnv',
+      \   'neomake_errors': 'LightLineNeomakeErrors',
+      \   'neomake_warnings': 'LightLineNeomakeWarnings',
+      \   'neomake_working': 'LightLineNeomakeWorking'
       \ },
       \ 'component': {
       \   'lineinfo': '%3l:%-2v',
@@ -109,5 +115,29 @@ endfunction
 function! LightLineCondaEnv()
   let condaenv = $CONDA_DEFAULT_ENV
   return condaenv
+endfunction
+
+function! LightLineNeomakeWorking()
+  if !exists(":Neomake")
+    return ''
+  elseif neomake#statusline#GetRunningStatus() == ''
+    return ''
+  else
+    return 'T:'.neomake#statusline#GetRunningStatus()
+  endif
+endfunction
+
+function! LightLineNeomakeErrors()
+  if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "E", 0) + get(neomake#statusline#LoclistCounts(), "E", 0)) == 0)
+    return ''
+  endif
+  return 'E:'.(get(neomake#statusline#LoclistCounts(), 'E', 0) + get(neomake#statusline#QflistCounts(), 'E', 0))
+endfunction
+
+function! LightLineNeomakeWarnings()
+  if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "W", 0) + get(neomake#statusline#LoclistCounts(), "W", 0)) == 0)
+    return ''
+  endif
+  return 'W:'.(get(neomake#statusline#LoclistCounts(), 'W', 0) + get(neomake#statusline#QflistCounts(), 'W', 0))
 endfunction
 " }}}

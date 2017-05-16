@@ -52,13 +52,14 @@ if !empty(s:plug_file)
   Plug 'edkolev/tmuxline.vim'
   "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
+  Plug 'ap/vim-css-color'
   " }}}
   
   " Interface {{{
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'duff/vim-scratch'
-  Plug 'yuttie/comfortable-motion.vim'
+  "Plug 'yuttie/comfortable-motion.vim'
   Plug 'machakann/vim-highlightedyank'
   Plug 'vim-utils/vim-troll-stopper'
   " }}}
@@ -69,12 +70,22 @@ if !empty(s:plug_file)
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-eunuch'
   endif
+
+  " Searching
+  "Plug 'eugen0329/vim-esearch'
   
   " Git
   Plug 'tpope/vim-fugitive'
 
   " Text editing
   Plug 'godlygeek/tabular'
+  Plug 'kwon-young/vim-pairify'
+
+  " Searching
+  "Plug 'mileszs/ack.vim'
+
+  "" Real time collaboration
+  "Plug 'floobits/floobits-neovim', {'do': ':UpdateRemotePlugins'}
 
   " Languages {{{
   " Generic
@@ -92,26 +103,33 @@ if !empty(s:plug_file)
   Plug 'Yggdroot/indentLine' , { 'for': ['python'] }
 
   "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
-  Plug 'shougo/neoinclude.vim'
+  "Plug 'shougo/neoinclude.vim'
 
-  Plug 'neomake/neomake'
+  Plug 'kwon-young/neomake'
   Plug 'vim-scripts/DoxygenToolkit.vim'
+
+  "Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
   " python
   if has("nvim")
-    Plug 'cjrh/vim-conda'
+    "Plug 'cjrh/vim-conda'
   endif
-  Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
+  "Plug 'bfredl/nvim-ipy', { 'do': ':UpdateRemotePlugins' }
   Plug 'tmhedberg/SimpylFold'
   Plug 'heavenshell/vim-pydocstring'
 
   " vimscript
   Plug 'Shougo/neco-vim'
 
-  " C++
-  Plug 'arakashic/chromatica.nvim'
-  "Plug 'octol/vim-cpp-enhanced-highlight'
+  " C/C++
+  "Plug 'arakashic/chromatica.nvim'
+  Plug 'octol/vim-cpp-enhanced-highlight'
   Plug 'derekwyatt/vim-fswitch'
+  Plug 'critiqjo/lldb.nvim'
+  Plug 'vim-scripts/a.vim'
+  if has("nvim")
+    "Plug 'bbchung/Clamp'
+  endif
   
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
@@ -135,8 +153,7 @@ else
 endif
 
 " Settings colorscheme {{{
-let g:seoul256_background = 236
-silent! colorscheme seoul256
+source $MYCONFIG_DIR/plug_config/plug_colorscheme.vim
 " }}}
 
 " Status bar plugins configuration
@@ -145,9 +162,8 @@ source $MYCONFIG_DIR/plug_config/plug_statusbar.vim
 " Git plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_git.vim
 
-" Interface plugins configuration {{{
+" Interface plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_interface.vim
-" }}}
 
 " File system plugins configuration
 source $MYCONFIG_DIR/plug_config/plug_filesystem.vim
