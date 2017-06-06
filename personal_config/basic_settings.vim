@@ -104,7 +104,7 @@ set noerrorbells
 set scrolloff=4
 set listchars=tab:>-,trail:-
 set wrap
-set showtabline=0
+set showtabline=1
 " disable bell of vim
 set noeb vb t_vb=
 if has('nvim')

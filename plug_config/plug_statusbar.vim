@@ -59,6 +59,14 @@ let g:lightline = {
       \               [ 'fileformat', 'fileencoding', 'filetype', 'neomake_working',
       \                 'neomake_errors', 'neomake_warnings'  ] ]
       \ },
+      \ 'tabline': {
+      \   'left': [ [ 'tabs' ] ],
+      \   'right': [ [ 'close' ] ]
+      \ },
+      \ 'tab': {
+      \   'active': [ 'tabnum', 'pwd' ],
+      \   'inactive': [ 'tabnum', 'pwd' ]
+      \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'readonly': 'LightLineReadonly',
@@ -69,12 +77,19 @@ let g:lightline = {
       \   'neomake_warnings': 'LightLineNeomakeWarnings',
       \   'neomake_working': 'LightLineNeomakeWorking'
       \ },
+      \ 'tab_component_function': {
+      \   'pwd': 'LightLinePwd'
+      \ },
       \ 'component': {
       \   'lineinfo': '%3l:%-2v',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+
+function! LightLinePwd(n)
+  return getcwd(-1, a:n)
+endfunction
 
 function! LightLineModified()
   if &filetype == "help"
