@@ -64,8 +64,8 @@ let g:lightline = {
       \   'right': [ [ 'close' ] ]
       \ },
       \ 'tab': {
-      \   'active': [ 'tabnum', 'pwd' ],
-      \   'inactive': [ 'tabnum', 'pwd' ]
+      \   'active': [ 'pwd' ],
+      \   'inactive': [ 'pwd' ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
@@ -88,7 +88,7 @@ let g:lightline = {
       \ }
 
 function! LightLinePwd(n)
-  return getcwd(-1, a:n)
+  return split(getcwd(-1, a:n), '/')[-1]
 endfunction
 
 function! LightLineModified()
