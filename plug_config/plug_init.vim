@@ -61,7 +61,7 @@ if !empty(s:plug_file)
   Plug 'duff/vim-scratch'
   "Plug 'yuttie/comfortable-motion.vim'
   Plug 'machakann/vim-highlightedyank'
-  Plug 'vim-utils/vim-troll-stopper'
+  Plug 'vim-utils/vim-troll-stopper', { 'on': 'Troller'}
   " }}}
 
   " File system
@@ -76,6 +76,9 @@ if !empty(s:plug_file)
   
   " Git
   Plug 'tpope/vim-fugitive'
+
+  " TaskWarrior
+  Plug 'blindFS/vim-taskwarrior'
 
   " Text editing
   Plug 'godlygeek/tabular'
@@ -100,7 +103,7 @@ if !empty(s:plug_file)
   Plug 'tweekmonster/braceless.vim'
 
   " !!!! Breaks vim-pandoc-syntax highlighting !!!!
-  Plug 'Yggdroot/indentLine' , { 'for': ['python'] }
+  "Plug 'Yggdroot/indentLine' , { 'for': ['python'] }
 
   "Plug 'Shougo/deoplete.nvim', { 'for': ['vim'], 'do': ':UpdateRemotePlugins' }
   "Plug 'shougo/neoinclude.vim'
@@ -134,7 +137,7 @@ if !empty(s:plug_file)
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax'
-  Plug 'gbgar/pandoc-sections.vim'
+  "Plug 'gbgar/pandoc-sections.vim'
 
   " latex
   Plug 'lervag/vimtex'
@@ -145,6 +148,11 @@ if !empty(s:plug_file)
   Plug 'itchyny/vim-haskell-indent'
   Plug 'twinside/vim-haskellfold'
   Plug 'travitch/hasksyn'
+  " }}}
+
+  " Logic {{{
+  " async run
+  Plug 'skywind3000/asyncrun.vim'
   " }}}
 
   call plug#end()
