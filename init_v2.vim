@@ -243,9 +243,7 @@ if !empty(s:plug_file)
   " Interface
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  if has('nvim')
-    Plug 'machakann/vim-highlightedyank'
-  endif
+  Plug 'machakann/vim-highlightedyank'
   Plug 'vim-utils/vim-troll-stopper', { 'on': 'Troller'}
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-flagship'
