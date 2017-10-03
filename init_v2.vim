@@ -382,6 +382,29 @@ let g:LanguageClient_autoStart = 1
 "LanguageClient_textDocument_rename()<CR>
 " }}}
 
+" Status-line configuration {{{
+function! QuickfixNumberEntry()
+  if len(getqflist())
+    return 'qf=' . len(getqflist())
+  else
+    return ''
+endfunction
+
+function! LocationlistNumberEntry()
+  if len(getloclist(winnr()))
+    return 'loc=' . len(getloclist(winnr()))
+  else
+    return ''
+endfunction
+
+augroup quickloc
+  autocmd!
+  autocmd User Flags call Hoist('buffer', 6, 'QuickfixNumberEntry')
+  autocmd User Flags call Hoist('buffer', 7, 'LocationlistNumberEntry')
+augroup END
+" }}}
+
+
 augroup cutecat
    autocmd!
    autocmd VimEnter * echo ">^.^<"
