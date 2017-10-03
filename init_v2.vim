@@ -243,7 +243,9 @@ if !empty(s:plug_file)
   " Interface
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  Plug 'machakann/vim-highlightedyank'
+  if has('nvim')
+    Plug 'machakann/vim-highlightedyank'
+  endif
   Plug 'vim-utils/vim-troll-stopper', { 'on': 'Troller'}
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-flagship'
@@ -273,14 +275,11 @@ if !empty(s:plug_file)
 
   Plug 'tweekmonster/braceless.vim'
 
-  if !has('nvim')
-    Plug 'roxma/vim-hug-neovim-rpc'
-  else
-    Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-    " (Optional) Completion integration with nvim-completion-manager.
-    Plug 'roxma/nvim-completion-manager'
-    Plug 'Shougo/echodoc.vim'
-  endif
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'roxma/vim-hug-neovim-rpc'
+  " (Optional) Completion integration with nvim-completion-manager.
+  Plug 'roxma/nvim-completion-manager'
+  Plug 'Shougo/echodoc.vim'
   Plug 'Shougo/neco-syntax'
   Plug 'Shougo/neco-vim'
 
