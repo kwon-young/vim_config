@@ -374,12 +374,11 @@ let g:LanguageClient_serverCommands = {
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
-"nnoremap <silent> K :call
-"LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> gd :call
-"LanguageClient_textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call
-"LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <leader>js :call LanguageClient_textDocument_documentSymbol()<CR>
+nnoremap <silent> <leader>jr :call LanguageClient_textDocument_references()<CR>
+nnoremap <silent> <leader>jw :call LanguageClient_workspace_symbol()<CR>
+nnoremap <silent> <leader>jc :call LanguageClient_textDocument_rename()<CR>
 " }}}
 
 " {{{
