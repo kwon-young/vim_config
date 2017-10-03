@@ -380,7 +380,7 @@ nnoremap <silent> <leader>jw :call LanguageClient_workspace_symbol()<CR>
 nnoremap <silent> <leader>jc :call LanguageClient_textDocument_rename()<CR>
 " }}}
 
-" {{{
+" nvim-completion-manager configuration {{{
 " <Enter> hide the completion menu and also start a new line
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 " }}}
