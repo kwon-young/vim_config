@@ -291,6 +291,8 @@ if !empty(s:plug_file)
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax'
 
+  " Latex
+  Plug 'latex-box-team/latex-box', {'for': 'tex'}
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
