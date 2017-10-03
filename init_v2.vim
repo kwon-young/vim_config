@@ -382,6 +382,11 @@ let g:LanguageClient_autoStart = 1
 "LanguageClient_textDocument_rename()<CR>
 " }}}
 
+" {{{
+" <Enter> hide the completion menu and also start a new line
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" }}}
+
 " Status-line configuration {{{
 function! QuickfixNumberEntry()
   if len(getqflist())
