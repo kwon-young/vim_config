@@ -276,7 +276,9 @@ if !empty(s:plug_file)
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
   Plug 'roxma/vim-hug-neovim-rpc'
   " (Optional) Completion integration with nvim-completion-manager.
-  Plug 'roxma/nvim-completion-manager'
+  if has('nvim')
+    Plug 'roxma/nvim-completion-manager'
+  endif
   Plug 'Shougo/echodoc.vim'
   Plug 'Shougo/neco-syntax'
   Plug 'Shougo/neco-vim'
