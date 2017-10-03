@@ -288,6 +288,8 @@ if !empty(s:plug_file)
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax'
 
+  " Latex
+  Plug 'latex-box-team/latex-box', {'for': 'tex'}
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
@@ -369,13 +371,40 @@ let g:LanguageClient_serverCommands = {
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
-"nnoremap <silent> K :call
-"LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> gd :call
-"LanguageClient_textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call
-"LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <leader>js :call LanguageClient_textDocument_documentSymbol()<CR>
+nnoremap <silent> <leader>jr :call LanguageClient_textDocument_references()<CR>
+nnoremap <silent> <leader>jw :call LanguageClient_workspace_symbol()<CR>
+nnoremap <silent> <leader>jc :call LanguageClient_textDocument_rename()<CR>
 " }}}
+
+" {{{
+" <Enter> hide the completion menu and also start a new line
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" }}}
+
+" Status-line configuration {{{
+function! QuickfixNumberEntry()
+  if len(getqflist())
+    return 'qf=' . len(getqflist())
+  else
+    return ''
+endfunction
+
+function! LocationlistNumberEntry()
+  if len(getloclist(winnr()))
+    return 'loc=' . len(getloclist(winnr()))
+  else
+    return ''
+endfunction
+
+augroup quickloc
+  autocmd!
+  autocmd User Flags call Hoist('buffer', 6, 'QuickfixNumberEntry')
+  autocmd User Flags call Hoist('buffer', 7, 'LocationlistNumberEntry')
+augroup END
+" }}}
+
 
 augroup cutecat
    autocmd!
