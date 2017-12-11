@@ -263,6 +263,7 @@ if !empty(s:plug_file)
 
   " Text editing
   Plug 'godlygeek/tabular'
+  Plug 'FooSoft/vim-argwrap'
 
   " Languages
   " Generic
@@ -405,6 +406,10 @@ augroup quickloc
   autocmd User Flags call Hoist('buffer', 6, 'QuickfixNumberEntry')
   autocmd User Flags call Hoist('buffer', 7, 'LocationlistNumberEntry')
 augroup END
+" }}}
+
+" vim-argwrap configuration {{{
+nnoremap <leader>a :ArgWrap<CR>
 " }}}
 
 
