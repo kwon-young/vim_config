@@ -180,6 +180,8 @@ if has('nvim')
   augroup terminal
     autocmd!
     autocmd TermOpen * setlocal nospell
+    autocmd TermOpen * setlocal nonumber
+    autocmd TermOpen * startinsert
   augroup END
   set shell=zsh
   " exit insert mode in terminal
@@ -243,7 +245,9 @@ if !empty(s:plug_file)
   " Interface
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  Plug 'machakann/vim-highlightedyank'
+  if has('nvim')
+    Plug 'machakann/vim-highlightedyank'
+  endif
   Plug 'vim-utils/vim-troll-stopper', { 'on': 'Troller'}
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-flagship'
