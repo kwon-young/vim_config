@@ -374,6 +374,7 @@ let g:LanguageClient_serverCommands = {
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_diagnosticsList = "location"
 
 nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>js :call LanguageClient_textDocument_documentSymbol()<CR>
