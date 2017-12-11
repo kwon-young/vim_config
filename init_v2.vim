@@ -410,6 +410,12 @@ augroup quickloc
 augroup END
 " }}}
 
+" latex-box configuration {{{
+"let g:LatexBox_latexmk_async = 1
+"let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_quickfix = 4
+" }}}
+
 " vim-argwrap configuration {{{
 nnoremap <leader>a :ArgWrap<CR>
 " }}}
