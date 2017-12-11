@@ -267,6 +267,7 @@ if !empty(s:plug_file)
 
   " Text editing
   Plug 'godlygeek/tabular'
+  Plug 'FooSoft/vim-argwrap'
 
   " Languages
   " Generic
@@ -289,6 +290,7 @@ if !empty(s:plug_file)
 
   " C/C++
   Plug 'octol/vim-cpp-enhanced-highlight'
+  Plug 'dawikur/algorithm-mnemonics.vim'
   
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
@@ -376,6 +378,7 @@ let g:LanguageClient_serverCommands = {
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_diagnosticsList = "location"
 
 nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>js :call LanguageClient_textDocument_documentSymbol()<CR>
@@ -409,6 +412,16 @@ augroup quickloc
   autocmd User Flags call Hoist('buffer', 6, 'QuickfixNumberEntry')
   autocmd User Flags call Hoist('buffer', 7, 'LocationlistNumberEntry')
 augroup END
+" }}}
+
+" latex-box configuration {{{
+"let g:LatexBox_latexmk_async = 1
+"let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_quickfix = 4
+" }}}
+
+" vim-argwrap configuration {{{
+nnoremap <leader>a :ArgWrap<CR>
 " }}}
 
 

@@ -6,3 +6,13 @@ snippet input_tab "table figure with external latex"
   \label{tab:${3:mylabel}}
 \end{figure}
 endsnippet
+
+snippet subfloat "subfloat env"
+\subfloat[${1:caption}]{
+  \fbox{\includegraphics[width=${2:0.45in}]{ressources/${3:image}}}}
+${4:\hfill}
+endsnippet
+
+snippet only "only env"
+\only<${1:1}>{$2}
+endsnippet
