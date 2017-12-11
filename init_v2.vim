@@ -286,6 +286,7 @@ if !empty(s:plug_file)
 
   " C/C++
   Plug 'octol/vim-cpp-enhanced-highlight'
+  Plug 'dawikur/algorithm-mnemonics.vim'
   
   " Markdown
   Plug 'vim-pandoc/vim-pandoc'
