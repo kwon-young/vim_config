@@ -131,6 +131,9 @@ set noshiftround
 set smarttab
 
 set backspace=indent,eol,start        " bs anything
+
+" c/c++ indenting option to disable goto automatic indentation
+set cinoptions+=L0
 " }}}
 
 " mappings {{{
