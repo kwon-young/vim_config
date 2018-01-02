@@ -297,6 +297,10 @@ if !empty(s:plug_file)
 
   " Latex
   Plug 'latex-box-team/latex-box', {'for': 'tex'}
+
+  " Python
+  Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
