@@ -131,6 +131,9 @@ set noshiftround
 set smarttab
 
 set backspace=indent,eol,start        " bs anything
+
+" c/c++ indenting option to disable goto automatic indentation
+set cinoptions+=L0
 " }}}
 
 " mappings {{{
@@ -278,7 +281,7 @@ if !empty(s:plug_file)
 
   Plug 'tweekmonster/braceless.vim'
 
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
   Plug 'roxma/vim-hug-neovim-rpc'
   " (Optional) Completion integration with nvim-completion-manager.
   if has('nvim')
@@ -298,6 +301,10 @@ if !empty(s:plug_file)
 
   " Latex
   Plug 'latex-box-team/latex-box', {'for': 'tex'}
+
+  " Python
+  Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
@@ -377,9 +384,11 @@ let g:LanguageClient_serverCommands = {
       \ }
 
 " Automatically start language servers.
+let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_autoStart = 1
-let g:LanguageClient_diagnosticsList = "location"
+let g:LanguageClient_diagnosticsList = "Location"
 
+nnoremap <silent> <leader>jh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>js :call LanguageClient_textDocument_documentSymbol()<CR>
 nnoremap <silent> <leader>jr :call LanguageClient_textDocument_references()<CR>
