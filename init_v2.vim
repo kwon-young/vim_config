@@ -267,6 +267,7 @@ if !empty(s:plug_file)
   " Text editing
   Plug 'godlygeek/tabular'
   Plug 'FooSoft/vim-argwrap'
+  Plug 'Osse/double-tap'
 
   " Languages
   " Generic
