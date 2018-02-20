@@ -288,6 +288,7 @@ if !empty(s:plug_file)
   Plug 'Shougo/echodoc.vim'
   Plug 'Shougo/neco-syntax'
   Plug 'Shougo/neco-vim'
+  Plug 'rhysd/vim-grammarous'
 
   " C/C++
   Plug 'octol/vim-cpp-enhanced-highlight'
