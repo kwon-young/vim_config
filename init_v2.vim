@@ -304,6 +304,9 @@ if !empty(s:plug_file)
   " Python
   Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
 
+  " QML
+  Plug 'peterhoeg/vim-qml'
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
