@@ -438,6 +438,17 @@ let g:LatexBox_quickfix = 4
 nnoremap <leader>a :ArgWrap<CR>
 " }}}
 
+" vim-grammarous configuration {{{
+let g:grammarous#use_vim_spelllang=1
+let g:grammarous#languagetool_cmd = 'languagetool'
+let g:grammarous#disabled_rules = {
+            \ 'pandoc' : ['FRENCH_WHITESPACE'],
+            \ }
+" }}}
+
+" double-tap configuration {{{
+let g:loaded_doubletap = 1
+" }}}
 
 augroup cutecat
    autocmd!
