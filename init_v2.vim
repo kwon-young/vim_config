@@ -183,6 +183,8 @@ if has('nvim')
   augroup terminal
     autocmd!
     autocmd TermOpen * setlocal nospell
+    autocmd TermOpen * setlocal nonumber
+    autocmd TermOpen * startinsert
   augroup END
   set shell=zsh
   " exit insert mode in terminal
@@ -246,7 +248,9 @@ if !empty(s:plug_file)
   " Interface
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  Plug 'machakann/vim-highlightedyank'
+  if has('nvim')
+    Plug 'machakann/vim-highlightedyank'
+  endif
   Plug 'vim-utils/vim-troll-stopper', { 'on': 'Troller'}
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-flagship'
@@ -279,7 +283,10 @@ if !empty(s:plug_file)
 
   Plug 'tweekmonster/braceless.vim'
 
-  Plug 'autozimu/LanguageClient-neovim', {'tag': 'binary-*-x86_64-unknown-linux-musl'}
+  Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh'
+        \ }
   Plug 'roxma/vim-hug-neovim-rpc'
   " (Optional) Completion integration with nvim-completion-manager.
   if has('nvim')

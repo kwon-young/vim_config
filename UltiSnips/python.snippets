@@ -2,3 +2,13 @@
 snippet write_tex "write latex"
 write_latex($1, os.path.join(save_dir, "$1."+ext_fmt))
 endsnippet
+
+snippet header "header"
+"""
+File: ${1:`!v vim_snippets#Filename('$1.py', 'foo.py')`}
+Author: Kwon-Young Choi
+Email: kwon-young.choi@irisa.fr
+Date: ${2:date}
+Description: ${0}
+"""
+endsnippet
