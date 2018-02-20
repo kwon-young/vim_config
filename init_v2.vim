@@ -271,7 +271,8 @@ if !empty(s:plug_file)
 
   " Languages
   " Generic
-  Plug 'ludovicchabant/vim-gutentags'
+  "Plug 'ludovicchabant/vim-gutentags'
+  Plug 'kwon-young/gen_tags.vim'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdcommenter'
