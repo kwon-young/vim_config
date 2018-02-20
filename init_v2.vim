@@ -361,6 +361,9 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>u :Snippets<CR>
+if has_key(g:plugs, 'fzf.vim')
+  imap <c-x><c-f> <plug>(fzf-complete-path)
+endif
 " }}}
 
 " Braceless configuration {{{
