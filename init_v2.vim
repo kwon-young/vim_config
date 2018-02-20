@@ -281,7 +281,10 @@ if !empty(s:plug_file)
 
   Plug 'tweekmonster/braceless.vim'
 
-  Plug 'autozimu/LanguageClient-neovim', {'tag': 'binary-*-x86_64-unknown-linux-musl'}
+  Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh'
+        \ }
   Plug 'roxma/vim-hug-neovim-rpc'
   " (Optional) Completion integration with nvim-completion-manager.
   if has('nvim')
