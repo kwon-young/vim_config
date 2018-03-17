@@ -393,6 +393,7 @@ let g:pandoc#modules#disabled = ["chdir"]
 
 let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
+      \ 'cpp': ['clangd'],
       \ }
 
 " Automatically start language servers.
