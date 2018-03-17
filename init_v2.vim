@@ -87,6 +87,7 @@ if has('nvim')
 endif
 " always show last window status line
 set laststatus=2
+set foldlevel=99
 " }}}
 
 " Indentation option {{{
@@ -300,6 +301,7 @@ if !empty(s:plug_file)
 
   " Python
   Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
+  Plug 'vim-scripts/python.vim--Herzog', {'for': 'python'}
 
   call plug#end()
 else
