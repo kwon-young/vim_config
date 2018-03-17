@@ -157,7 +157,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>eg :vsplit $MYGVIMRC<cr>
 nnoremap <leader>sg :source $MYGVIMRC<cr>
 " Edit note file
-nnoremap <leader>en :edit $HOME/.local/share/nvim/note.md<CR>
+nnoremap <leader>en :edit $HOME/.local/share/nvim/note.md<CR>GG
 nnoremap <leader>exn :vsplit $HOME/.local/share/nvim/note.md<CR>
 nnoremap <leader>esn :split $HOME/.local/share/nvim/note.md<CR>
 nnoremap <leader>etn :tabedit $HOME/.local/share/nvim/note.md<CR>
@@ -184,6 +184,8 @@ if has('nvim')
   augroup terminal
     autocmd!
     autocmd TermOpen * setlocal nospell
+    autocmd TermOpen * setlocal nonumber
+    autocmd TermOpen * startinsert
   augroup END
   set shell=zsh
   " exit insert mode in terminal
@@ -247,7 +249,9 @@ if !empty(s:plug_file)
   " Interface
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  Plug 'machakann/vim-highlightedyank'
+  if has('nvim')
+    Plug 'machakann/vim-highlightedyank'
+  endif
   Plug 'vim-utils/vim-troll-stopper', { 'on': 'Troller'}
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-flagship'
@@ -268,17 +272,22 @@ if !empty(s:plug_file)
   " Text editing
   Plug 'godlygeek/tabular'
   Plug 'FooSoft/vim-argwrap'
+  Plug 'Osse/double-tap'
 
   " Languages
   " Generic
-  Plug 'ludovicchabant/vim-gutentags'
+  "Plug 'ludovicchabant/vim-gutentags'
+  Plug 'kwon-young/gen_tags.vim'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdcommenter'
 
   Plug 'tweekmonster/braceless.vim'
 
-  Plug 'autozimu/LanguageClient-neovim', {'tag': 'binary-*-x86_64-unknown-linux-musl'}
+  Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh'
+        \ }
   Plug 'roxma/vim-hug-neovim-rpc'
   " (Optional) Completion integration with nvim-completion-manager.
   if has('nvim')
@@ -287,6 +296,7 @@ if !empty(s:plug_file)
   Plug 'Shougo/echodoc.vim'
   Plug 'Shougo/neco-syntax'
   Plug 'Shougo/neco-vim'
+  Plug 'rhysd/vim-grammarous'
 
   " C/C++
   Plug 'octol/vim-cpp-enhanced-highlight'
@@ -302,6 +312,9 @@ if !empty(s:plug_file)
   " Python
   Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
   Plug 'vim-scripts/python.vim--Herzog', {'for': 'python'}
+
+  " QML
+  Plug 'peterhoeg/vim-qml'
 
   call plug#end()
 else
@@ -357,6 +370,9 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>u :Snippets<CR>
+if has_key(g:plugs, 'fzf.vim')
+  imap <c-x><c-f> <plug>(fzf-complete-path)
+endif
 " }}}
 
 " Braceless configuration {{{
@@ -431,6 +447,17 @@ let g:LatexBox_quickfix = 4
 nnoremap <leader>a :ArgWrap<CR>
 " }}}
 
+" vim-grammarous configuration {{{
+let g:grammarous#use_vim_spelllang=1
+let g:grammarous#languagetool_cmd = 'languagetool'
+let g:grammarous#disabled_rules = {
+            \ 'pandoc' : ['FRENCH_WHITESPACE'],
+            \ }
+" }}}
+
+" double-tap configuration {{{
+let g:loaded_doubletap = 1
+" }}}
 
 augroup cutecat
    autocmd!
