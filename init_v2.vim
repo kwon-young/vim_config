@@ -177,6 +177,8 @@ nnoremap du :diffupdate<CR>
 " Add very magic to search command
 nnoremap / /\v
 nnoremap ? ?\v
+" fullscreen current buffer
+nnoremap <a-o> :tab split<CR>
 " }}}
 
 " Neovim Terminal settings {{{
