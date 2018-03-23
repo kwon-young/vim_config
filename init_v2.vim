@@ -161,6 +161,10 @@ nnoremap <leader>exn :vsplit $HOME/.local/share/nvim/note.md<CR>
 nnoremap <leader>esn :split $HOME/.local/share/nvim/note.md<CR>
 nnoremap <leader>etn :tabedit $HOME/.local/share/nvim/note.md<CR>
 
+" Easy copy/pasting with X11 "+ register
+noremap <leader>y "+y
+noremap <leader>p "+p
+
 " delete buffer without deleting split
 nnoremap <leader>d :bp\|bd #<cr>
 
