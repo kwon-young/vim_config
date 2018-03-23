@@ -433,10 +433,15 @@ function! LocationlistNumberEntry()
     return ''
 endfunction
 
+function! SpelllangEntry()
+  return &spelllang
+endfunction
+
 augroup quickloc
   autocmd!
-  autocmd User Flags call Hoist('buffer', 6, 'QuickfixNumberEntry')
-  autocmd User Flags call Hoist('buffer', 7, 'LocationlistNumberEntry')
+  autocmd User Flags call Hoist('buffer', 6, 'SpelllangEntry')
+  autocmd User Flags call Hoist('buffer', 7, 'QuickfixNumberEntry')
+  autocmd User Flags call Hoist('buffer', 8, 'LocationlistNumberEntry')
 augroup END
 " }}}
 
