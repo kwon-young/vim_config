@@ -87,6 +87,7 @@ if has('nvim')
 endif
 " always show last window status line
 set laststatus=2
+set foldlevel=99
 " }}}
 
 " Indentation option {{{
@@ -180,6 +181,8 @@ nnoremap du :diffupdate<CR>
 " Add very magic to search command
 nnoremap / /\v
 nnoremap ? ?\v
+" fullscreen current buffer
+nnoremap <a-o> :tab split<CR>
 " }}}
 
 " Neovim Terminal settings {{{
@@ -314,6 +317,7 @@ if !empty(s:plug_file)
 
   " Python
   Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
+  Plug 'vim-scripts/python.vim--Herzog', {'for': 'python'}
 
   " QML
   Plug 'peterhoeg/vim-qml'
