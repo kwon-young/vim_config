@@ -87,6 +87,7 @@ if has('nvim')
 endif
 " always show last window status line
 set laststatus=2
+set foldlevel=99
 " }}}
 
 " Indentation option {{{
@@ -161,6 +162,10 @@ nnoremap <leader>exn :vsplit $HOME/.local/share/nvim/note.md<CR>
 nnoremap <leader>esn :split $HOME/.local/share/nvim/note.md<CR>
 nnoremap <leader>etn :tabedit $HOME/.local/share/nvim/note.md<CR>
 
+" Easy copy/pasting with X11 "+ register
+noremap <leader>y "+y
+noremap <leader>p "+p
+
 " delete buffer without deleting split
 nnoremap <leader>d :bp\|bd #<cr>
 
@@ -176,6 +181,8 @@ nnoremap du :diffupdate<CR>
 " Add very magic to search command
 nnoremap / /\v
 nnoremap ? ?\v
+" fullscreen current buffer
+nnoremap <a-o> :tab split<CR>
 " }}}
 
 " Neovim Terminal settings {{{
@@ -310,6 +317,7 @@ if !empty(s:plug_file)
 
   " Python
   Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
+  Plug 'vim-scripts/python.vim--Herzog', {'for': 'python'}
 
   " QML
   Plug 'peterhoeg/vim-qml'
@@ -393,6 +401,7 @@ let g:pandoc#modules#disabled = ["chdir"]
 
 let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
+      \ 'cpp': ['clangd'],
       \ }
 
 " Automatically start language servers.
@@ -428,10 +437,15 @@ function! LocationlistNumberEntry()
     return ''
 endfunction
 
+function! SpelllangEntry()
+  return &spelllang
+endfunction
+
 augroup quickloc
   autocmd!
-  autocmd User Flags call Hoist('buffer', 6, 'QuickfixNumberEntry')
-  autocmd User Flags call Hoist('buffer', 7, 'LocationlistNumberEntry')
+  autocmd User Flags call Hoist('buffer', 6, 'SpelllangEntry')
+  autocmd User Flags call Hoist('buffer', 7, 'QuickfixNumberEntry')
+  autocmd User Flags call Hoist('buffer', 8, 'LocationlistNumberEntry')
 augroup END
 " }}}
 
