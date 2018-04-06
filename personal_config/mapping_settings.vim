@@ -111,8 +111,6 @@ nnoremap <leader>n :cnext<cr>
 nnoremap <leader>N :cprevious<cr>
 " diffupdate to du
 nnoremap du :diffupdate<CR>
-nnoremap + ddp
-nnoremap - ddkP
 
 " Add very magic to search command
 nnoremap / /\v
@@ -123,5 +121,4 @@ nnoremap ? ?\v
 " }}}
 
 " macros {{{
-let @d = 'o=getcwd()jkT/dT '
 " }}}

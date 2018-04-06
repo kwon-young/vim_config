@@ -84,8 +84,8 @@ let g:pandoc#modules#disabled = ["chdir"]
 augroup Pandoc
   " this one is which you're most likely to use?
   autocmd!
-  autocmd Filetype pandoc set makeprg=do-pandoc.rb\ % 
-  autocmd BufWritePost *.md Neomake!
+  "autocmd Filetype pandoc set makeprg=do-pandoc.rb\ % 
+  autocmd BufWritePost *.md AsyncRun export PATH=/home/kwon-young/.cabal/bin:/home/kwon-young/.gem/ruby/2.4.0/bin:/home/kwon-young/.local/bin:$PATH;do-pandoc.rb %
 augroup end
 
 " }}}
