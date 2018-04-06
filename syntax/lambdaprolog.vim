@@ -44,6 +44,8 @@ syn region  lambdaprologEncl transparent matchgroup=lambdaprologKeyword start="\
 syn match lambdaprologOperator "->"
 syn match lambdaprologOperator ":-"
 syn match lambdaprologOperator "::="
+syn match lambdaprologOperator "::/"
+syn match lambdaprologOperator "=="
 syn match lambdaprologOperator ">"
 syn match lambdaprologOperator "<"
 syn match lambdaprologOperator ">="
@@ -63,9 +65,10 @@ syn match lambdaprologKeyword "==>"
 syn match lambdaprologBoolean "!"
 syn keyword lambdaprologOperator is
 syn keyword lambdaprologKeyword export kind type use dynamic
-syn keyword lambdaprologDMOSOperator AT TERM_SEG TEST USE_LAYER IN AT_ABS FIND UNTIL LOAD_MEM SAVE_MEM
+syn keyword lambdaprologDMOSOperator AT TERM_SEG TERM_CMP TEST SELECT USE_LAYER FOR IN DO AT_ABS FIND UNTIL LOAD_MEM SAVE_MEM
 syn keyword lambdaprologStdPredicate length member append
 syn keyword lambdaprologBoolean true false
+syn keyword lambdaprologTypeName int
 
 syn sync minlines=50
 syn sync maxlines=500
