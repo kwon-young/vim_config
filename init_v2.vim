@@ -409,8 +409,28 @@ let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_diagnosticsList = "Location"
 
+" create a mark stack {{{
+function! IncrementalMarkPush() abort
+  let g:index_mark = get(g:, 'index_mark', -1) + 1
+  " configure, which marks to use
+  let marks = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  execute ':mark ' . marks[g:index_mark % strlen(marks)]
+endfunction
+
+function! s:IncrementalMarkPop() abort
+  let g:index_mark = max([get(g:, 'index_mark', 0), 0])
+  let marks = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let mark = marks[g:index_mark % strlen(marks)]
+  let g:index_mark = g:index_mark - 1
+  return '`' . mark
+endfunction
+" }}}
+
 nnoremap <silent> <leader>jh :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <leader>jm :call :call IncrementalMarkPush()<CR>
+nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>:call IncrementalMarkPush()<CR>
+nnoremap <silent><expr> <leader>jt <sid>IncrementalMarkPop()
+nnoremap <silent> <leader>je :echo get(g:, 'index_mark', -1)<CR>
 nnoremap <silent> <leader>js :call LanguageClient_textDocument_documentSymbol()<CR>
 nnoremap <silent> <leader>jr :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> <leader>jw :call LanguageClient_workspace_symbol()<CR>
