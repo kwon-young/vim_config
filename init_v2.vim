@@ -401,7 +401,7 @@ let g:pandoc#modules#disabled = ["chdir"]
 
 let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
-      \ 'cpp': ['/home/kwon-young/prog/llvm-build/bin/clangd'],
+      \ 'cpp': ['clangd'],
       \ }
 
 " Automatically start language servers.
