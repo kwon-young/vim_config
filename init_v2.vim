@@ -252,6 +252,9 @@ if !empty(s:plug_file)
 
   Plug 'junegunn/seoul256.vim'
   
+  " Gui
+  Plug 'equalsraf/neovim-gui-shim'
+
   " Interface
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
