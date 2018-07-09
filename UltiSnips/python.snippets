@@ -26,3 +26,13 @@ endsnippet
 snippet tqdm "import tqdm"
 from tqdm import tqdm
 endsnippet
+
+snippet joblib "import joblib"
+from joblib import Parallel, delayed
+from multiprocessing import cpu_count
+endsnippet
+
+snippet Parallel "Parallel for loop"
+${1:output} = Parallel(n_jobs=cpu_count(), verbose=3)(
+    delayed(${2:func})(${3:args}) for $3 in ${4:mylist})
+endsnippet
