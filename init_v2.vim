@@ -271,6 +271,7 @@ if !empty(s:plug_file)
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-eunuch'
   endif
+  Plug 'zenbro/mirror.vim'
 
   " Searching
   Plug 'teoljungberg/vim-grep'
