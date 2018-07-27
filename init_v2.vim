@@ -87,7 +87,8 @@ if has('nvim')
 endif
 " always show last window status line
 set laststatus=2
-set foldlevel=99
+set foldlevel=1
+set nofoldenable
 " }}}
 
 " Indentation option {{{
@@ -326,6 +327,9 @@ if !empty(s:plug_file)
   " QML
   Plug 'peterhoeg/vim-qml'
 
+  " typescript
+  Plug 'leafgarland/typescript-vim'
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
@@ -406,6 +410,7 @@ let g:pandoc#modules#disabled = ["chdir"]
 let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
       \ 'cpp': ['clangd'],
+      \ 'typescript': ['typescript-language-server', '--stdio']
       \ }
 
 " Automatically start language servers.
