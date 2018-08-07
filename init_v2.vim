@@ -87,7 +87,8 @@ if has('nvim')
 endif
 " always show last window status line
 set laststatus=2
-set foldlevel=99
+set foldlevel=1
+set nofoldenable
 " }}}
 
 " Indentation option {{{
@@ -252,6 +253,9 @@ if !empty(s:plug_file)
 
   Plug 'junegunn/seoul256.vim'
   
+  " Gui
+  Plug 'equalsraf/neovim-gui-shim'
+
   " Interface
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
@@ -268,6 +272,7 @@ if !empty(s:plug_file)
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-eunuch'
   endif
+  Plug 'zenbro/mirror.vim'
 
   " Searching
   Plug 'teoljungberg/vim-grep'
@@ -322,6 +327,9 @@ if !empty(s:plug_file)
 
   " QML
   Plug 'peterhoeg/vim-qml'
+
+  " typescript
+  Plug 'leafgarland/typescript-vim'
 
   call plug#end()
 else
@@ -403,6 +411,7 @@ let g:pandoc#modules#disabled = ["chdir"]
 let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
       \ 'cpp': ['clangd'],
+      \ 'typescript': ['typescript-language-server', '--stdio']
       \ }
 
 " Automatically start language servers.
@@ -471,9 +480,11 @@ augroup END
 " }}}
 
 " latex-box configuration {{{
+let g:tex_flavor = "latex"
 "let g:LatexBox_latexmk_async = 1
 "let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_quickfix = 4
+let g:LatexBox_viewer = "okular --unique"
 " }}}
 
 " vim-argwrap configuration {{{
