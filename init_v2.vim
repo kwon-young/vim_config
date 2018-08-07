@@ -279,6 +279,7 @@ if !empty(s:plug_file)
   Plug 'godlygeek/tabular'
   Plug 'FooSoft/vim-argwrap'
   Plug 'Osse/double-tap'
+  Plug 'tpope/vim-surround'
 
   " Languages
   " Generic
