@@ -301,14 +301,16 @@ if !empty(s:plug_file)
         \ 'do': 'bash install.sh'
         \ }
   Plug 'roxma/vim-hug-neovim-rpc'
-  " (Optional) Completion integration with nvim-completion-manager.
-  if has('nvim')
-    Plug 'roxma/nvim-completion-manager'
-  endif
   Plug 'Shougo/echodoc.vim'
-  Plug 'Shougo/neco-syntax'
-  Plug 'Shougo/neco-vim'
   Plug 'rhysd/vim-grammarous'
+  Plug 'ncm2/ncm2'
+  Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2-ultisnips'
+  Plug 'ncm2/ncm2-bufword'
+  Plug 'ncm2/ncm2-path'
+  Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+  Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
+  Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
 
   " C/C++
   Plug 'octol/vim-cpp-enhanced-highlight'
@@ -447,9 +449,10 @@ nnoremap <silent> <leader>jw :call LanguageClient_workspace_symbol()<CR>
 nnoremap <silent> <leader>jc :call LanguageClient_textDocument_rename()<CR>
 " }}}
 
-" nvim-completion-manager configuration {{{
-" <Enter> hide the completion menu and also start a new line
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" ncm2 configuration {{{
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
 " }}}
 
 " Status-line configuration {{{
