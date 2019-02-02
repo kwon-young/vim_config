@@ -312,6 +312,9 @@ if !empty(s:plug_file)
   Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
   Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
 
+  " include for lots of filetypes
+  Plug 'tpope/vim-apathy'
+
   " C/C++
   Plug 'octol/vim-cpp-enhanced-highlight'
   Plug 'dawikur/algorithm-mnemonics.vim'
@@ -387,6 +390,8 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>u :Snippets<CR>
+" fzf search in description of snippets
+command! -bar -bang Snippets call fzf#vim#snippets({'options': '-n ..'}, <bang>0)
 if has_key(g:plugs, 'fzf.vim')
   imap <c-x><c-f> <plug>(fzf-complete-path)
 endif
@@ -410,9 +415,11 @@ let g:pandoc#modules#disabled = ["chdir"]
 
 " LanguageClient-neovim configuration {{{
 
+" -header-insertion-decorators=false remove leading space from clangd completion
 let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
-      \ 'cpp': ['clangd'],
+      \ 'cpp': ['clangd', '-header-insertion-decorators=false'],
+      \ 'c': ['clangd', '-header-insertion-decorators=false'],
       \ 'typescript': ['typescript-language-server', '--stdio']
       \ }
 
@@ -453,6 +460,9 @@ nnoremap <silent> <leader>jc :call LanguageClient_textDocument_rename()<CR>
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
+" The parameters are the same as `:help feedkeys()`
+" Use <CR> to expand lsp snippets
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 " }}}
 
 " Status-line configuration {{{
