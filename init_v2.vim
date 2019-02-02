@@ -286,6 +286,9 @@ if !empty(s:plug_file)
   Plug 'Osse/double-tap'
   Plug 'tpope/vim-surround'
 
+  " Clipboard
+  Plug 'fcpg/vim-osc52'
+
   " Languages
   " Generic
   "Plug 'ludovicchabant/vim-gutentags'
@@ -514,6 +517,10 @@ let g:grammarous#disabled_rules = {
 
 " double-tap configuration {{{
 let g:loaded_doubletap = 1
+" }}}
+
+" vim-osc52 configuration {{{
+xmap <F7> y:call SendViaOSC52(getreg('"'))<cr>
 " }}}
 
 augroup cutecat
