@@ -339,6 +339,9 @@ if !empty(s:plug_file)
   " typescript
   Plug 'leafgarland/typescript-vim'
 
+  " Natural
+  Plug 'voldikss/vim-translate-me'
+
   call plug#end()
 else
   echom "vim-plug couldn't be installed, check if curl and " . &shell " is installed."
@@ -590,6 +593,16 @@ xmap <F7> y:call SendViaOSC52(getreg('"'))<cr>
 
 " Termdebug configuration {{{
 let g:termdebug_useFloatingHover = 1
+" }}}
+
+" vim-translate-me configuration {{{
+let g:vtm_default_to_lang = 'ko'
+let g:vtm_popup_window = 'floating'
+let g:vtm_default_mapping = 0
+" Type <Leader>t to translate the text under the cursor, print in the cmdline
+nnoremap <Leader>t :TranslateW<CR>
+vnoremap <Leader>t :<C-U>call vtm#TranslateV("complex")<CR>
+nnoremap <Leader>r :TranslateR<CR>
 " }}}
 
 augroup cutecat
