@@ -179,6 +179,8 @@ nnoremap <a-h> :wincmd h<CR>
 noremap <leader>h :nohlsearch<cr>
 " diffupdate to du
 nnoremap du :diffupdate<CR>
+nnoremap <leader>dt :windo diffthis<CR>
+nnoremap <leader>do :windo diffoff<CR>
 " Add very magic to search command
 nnoremap / /\v
 nnoremap ? ?\v
@@ -457,6 +459,7 @@ nnoremap <silent> <leader>js :call LanguageClient_textDocument_documentSymbol()<
 nnoremap <silent> <leader>jr :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> <leader>jw :call LanguageClient_workspace_symbol()<CR>
 nnoremap <silent> <leader>jc :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>jz :call LanguageClient_contextMenu()<CR>
 " }}}
 
 " ncm2 configuration {{{
