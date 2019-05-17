@@ -430,6 +430,7 @@ let g:LanguageClient_serverCommands = {
 let g:LanguageClient_loadSettings = 1
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_diagnosticsList = "Location"
+let g:LanguageClient_useFloatingHover = 1
 
 " create a mark stack {{{
 function! IncrementalMarkPush() abort
@@ -585,6 +586,10 @@ let g:loaded_doubletap = 1
 
 " vim-osc52 configuration {{{
 xmap <F7> y:call SendViaOSC52(getreg('"'))<cr>
+" }}}
+
+" Termdebug configuration {{{
+let g:termdebug_useFloatingHover = 1
 " }}}
 
 augroup cutecat
