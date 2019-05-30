@@ -226,6 +226,10 @@ if has('nvim')
 endif
 " }}}
 
+" Prolog filetype detection {{{
+let g:filetype_pl="prolog"
+" }}}
+
 " Plugins configuration {{{
 " Automatic installation of vim-plug
 if has('win32')
