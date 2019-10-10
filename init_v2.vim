@@ -334,6 +334,7 @@ if !empty(s:plug_file)
   " Python
   Plug 'vimjas/vim-python-pep8-indent', {'for': 'python'}
   Plug 'vim-scripts/python.vim--Herzog', {'for': 'python'}
+  Plug 'sakhnik/nvim-gdb', {'for': 'python'}
 
   " QML
   Plug 'peterhoeg/vim-qml'
@@ -606,6 +607,20 @@ let g:vtm_default_mapping = 0
 nnoremap <Leader>t :TranslateW<CR>
 vnoremap <Leader>t :<C-U>call vtm#TranslateV("complex")<CR>
 nnoremap <Leader>r :TranslateR<CR>
+" }}}
+
+" nvim-gdb configuration {{{
+let g:nvimgdb_disable_start_keymaps = 1
+let g:nvimgdb_config_override = {
+  \ 'key_until':      '<f6>',
+  \ 'key_continue':   '<f5>',
+  \ 'key_next':       '<f8>',
+  \ 'key_step':       '<f7>',
+  \ 'key_finish':     '<f12>',
+  \ 'key_breakpoint': 'B',
+  \ 'key_eval':       'K',
+  \ 'split_command': 'vsplit'
+  \ }
 " }}}
 
 augroup cutecat
